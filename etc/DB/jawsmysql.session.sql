@@ -1,30 +1,14 @@
 
 
 CREATE TABLE dono(
-id_dono		INT				unique		auto_increment,
+id_dono		INT				auto_increment,
 cpf			BIGINT 			unique,
 Nome		VARCHAR(150)	NOT NULL,
 email		VARCHAR(50),
 PRIMARY KEY(id_dono,cpf)
 );
 
-	CREATE TABLE endereco_dono(
-    id_end		INT			unique		auto_increment		PRIMARY KEY,
-    id_dono		INT,
-    cidade		VARCHAR(150),
-    bairro		VARCHAR(150),
-    logradouro	VARCHAR(150),
-    numero		INT,
-    CEP			INT,
-    FOREIGN KEY(id_dono) REFERENCES dono(id_dono)
-    );
-    
-    CREATE TABLE telefone_dono(
-    id_tel		INT			unique		auto_increment		PRIMARY KEY,
-    id_dono		INT,
-    telefone	VARCHAR(20),
-    FOREIGN KEY(id_dono) REFERENCES dono(id_dono)
-    );
+
     
     /*Criação da tabela dos animais*/
     
@@ -41,14 +25,15 @@ CREATE TABLE raca(
 );
 
 CREATE TABLE animal(
-	id_animal		INT			unique		auto_increment		PRIMARY KEY,
+	id_animal		INT			auto_increment		PRIMARY KEY,
     id_dono			INT			NOT NULL,
-	  nome			VARCHAR(50)	NOT NULL,
+    data_cadastro	DATETIME	DEFAULT CURRENT_TIMESTAMP,
+	nome			VARCHAR(50)	NOT NULL,
     sexo			CHAR(1)	NOT NULL,
     data_nasc		DATE,
     raca			INT,
     observacoes		VARCHAR(300),
-    FOREIGN KEY(id_animal) REFERENCES dono(id_dono),
+    FOREIGN KEY(id_dono) REFERENCES dono(id_dono),
     FOREIGN KEY (raca) REFERENCES raca(id_raca)
 );
     
@@ -59,32 +44,17 @@ CREATE TABLE animal(
 
 /********************Criação Tabela Veterinário**********************************************/
 CREATE TABLE veterinario(
-id			INT					auto_increment			PRIMARY KEY,
-nome_vet	VARCHAR(150)		NOT NULL,
-cpf			BIGINT				NOT NULL,
-CRMV		BIGINT				NOT NULL,
-email		VARCHAR(150)
+id				INT					auto_increment			PRIMARY KEY,
+nome_vet		VARCHAR(150)		NOT NULL,
+cpf				BIGINT				NOT NULL,
+CRMV			BIGINT				NOT NULL,
+email			VARCHAR(150),
+data_admissao	DATETIME			DEFAULT	current_timestamp,
+data_demissao	DATE
 );
 
 
-	CREATE TABLE endereco_vet(
-		id_end		INT			unique		auto_increment		PRIMARY KEY,
-		id_vet		INT			NOT NULL,
-		cidade		VARCHAR(150)	NOT NULL,
-		bairro		VARCHAR(150)	NOT NULL,
-		logradouro	VARCHAR(150)	NOT NULL,
-		numero		INT				NOT NULL,
-		CEP			INT				NOT NULL,
-		FOREIGN KEY(id_vet) REFERENCES veterinario(id)
-    );
-    
-    CREATE TABLE telefone(
-		id_tel		INT			unique		auto_increment		PRIMARY KEY,
-		id_vet		INT,
-		telefone	VARCHAR(20)				NOT NULL,
-		FOREIGN KEY(id_vet) REFERENCES veterinario(id)
-		
-    );
+
 	
 
 
@@ -93,7 +63,7 @@ email		VARCHAR(150)
 CREATE TABLE ficha_medica(
 	id_ficha		INT		auto_increment PRIMARY KEY,
     id_animal		INT		NOT NULL,
-    data_visita		DATE	DEFAULT CURRENT_TIMESTAMP,
+    data_visita		DATETIME	DEFAULT CURRENT_TIMESTAMP,
     vet_id			INT		NOT NULL,
     motivo_visita	VARCHAR(300)	DEFAULT	'rotina',
     diagnostico		VARCHAR(300)	DEFAULT NULL,
@@ -104,7 +74,7 @@ CREATE TABLE ficha_medica(
     FOREIGN KEY(vet_id)		REFERENCES veterinario(id)
 );
 
-	CREATE TABLE lista_servicos(
+	CREATE TABLE servico(
 		id				INT		auto_increment	PRIMARY KEY,
 		servico			VARCHAR(50)
     );
@@ -114,10 +84,44 @@ CREATE TABLE ficha_medica(
 		id_ficha_medica	INT,
 		id_servico		INT,
 		FOREIGN KEY(id_ficha_medica) REFERENCES ficha_medica(id_ficha),
-		FOREIGN KEY(id_servico) REFERENCES lista_servicos(id)
+		FOREIGN KEY(id_servico) REFERENCES servico(id)
     );
     
-    SET SQL_MODE='ALLOW_INVALID_DATES';
+    
     
     
     /*---------------------------*/
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    	CREATE TABLE endereco(
+    id_end		INT			auto_increment		PRIMARY KEY,
+    id_dono		INT,
+    id_vet		INT,
+    cidade		VARCHAR(150),
+    bairro		VARCHAR(150),
+    logradouro	VARCHAR(150),
+    numero		INT,
+    CEP			INT,
+    FOREIGN KEY(id_dono) REFERENCES dono(id_dono),
+    FOREIGN KEY(id_vet) REFERENCES veterinario(id)
+    );
+    
+    CREATE TABLE telefone(
+    id_tel		INT			auto_increment		PRIMARY KEY,
+    id_dono		INT,
+    id_vet		INT,
+    telefone	VARCHAR(20),
+    FOREIGN KEY(id_dono) REFERENCES dono(id_dono),
+    FOREIGN KEY(id_vet) REFERENCES veterinario(id)
+    );
+    
