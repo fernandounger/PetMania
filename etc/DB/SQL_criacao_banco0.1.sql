@@ -1,11 +1,32 @@
 
+ 
+CREATE TABLE endereco(
+    id_end		INT			auto_increment		PRIMARY KEY,
+    cidade		VARCHAR(150),
+    bairro		VARCHAR(150),
+    logradouro	VARCHAR(150),
+    numero		INT,
+    CEP			INT
+    );
+    
+    CREATE TABLE telefone(
+    id_tel		INT			auto_increment		PRIMARY KEY,
+    telefone	VARCHAR(20)
+    );
+    
+
+
 
 CREATE TABLE dono(
 id_dono		INT				auto_increment,
 cpf			BIGINT 			unique,
 Nome		VARCHAR(150)	NOT NULL,
 email		VARCHAR(50),
-PRIMARY KEY(id_dono,cpf)
+endereco	INT,
+telefone	INT,
+FOREIGN KEY(endereco) REFERENCES endereco(id_end),
+FOREIGN KEY(telefone) REFERENCES telefone(id_tel),
+PRIMARY KEY(id_dono)
 );
 
 
@@ -27,13 +48,12 @@ CREATE TABLE raca(
 CREATE TABLE animal(
 	id_animal		INT			auto_increment		PRIMARY KEY,
     id_dono			INT			NOT NULL,
-    data_cadastro	DATETIME	DEFAULT CURRENT_TIMESTAMP,
 	nome			VARCHAR(50)	NOT NULL,
     sexo			CHAR(1)	NOT NULL,
     data_nasc		DATE,
     raca			INT,
     observacoes		VARCHAR(300),
-    FOREIGN KEY(id_dono) REFERENCES dono(id_dono),
+    FOREIGN KEY(id_animal) REFERENCES dono(id_dono),
     FOREIGN KEY (raca) REFERENCES raca(id_raca)
 );
     
@@ -44,13 +64,15 @@ CREATE TABLE animal(
 
 /********************Criação Tabela Veterinário**********************************************/
 CREATE TABLE veterinario(
-id				INT					auto_increment			PRIMARY KEY,
-nome_vet		VARCHAR(150)		NOT NULL,
-cpf				BIGINT				NOT NULL,
-CRMV			BIGINT				NOT NULL,
-email			VARCHAR(150),
-data_admissao	DATETIME			DEFAULT	current_timestamp,
-data_demissao	DATE
+id			INT					auto_increment			PRIMARY KEY,
+nome_vet	VARCHAR(150)		NOT NULL,
+cpf			BIGINT				NOT NULL				unique,
+CRMV		BIGINT				NOT NULL,
+email		VARCHAR(150),
+endereco	INT,
+telefone	INT,
+FOREIGN KEY(endereco) REFERENCES endereco(id_end),
+FOREIGN KEY(telefone) REFERENCES telefone(id_tel)
 );
 
 
@@ -87,41 +109,6 @@ CREATE TABLE ficha_medica(
 		FOREIGN KEY(id_servico) REFERENCES servico(id)
     );
     
-    
-    
-    
     /*---------------------------*/
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    	CREATE TABLE endereco(
-    id_end		INT			auto_increment		PRIMARY KEY,
-    id_dono		INT,
-    id_vet		INT,
-    cidade		VARCHAR(150),
-    bairro		VARCHAR(150),
-    logradouro	VARCHAR(150),
-    numero		INT,
-    CEP			INT,
-    FOREIGN KEY(id_dono) REFERENCES dono(id_dono),
-    FOREIGN KEY(id_vet) REFERENCES veterinario(id)
-    );
-    
-    CREATE TABLE telefone(
-    id_tel		INT			auto_increment		PRIMARY KEY,
-    id_dono		INT,
-    id_vet		INT,
-    telefone	VARCHAR(20),
-    FOREIGN KEY(id_dono) REFERENCES dono(id_dono),
-    FOREIGN KEY(id_vet) REFERENCES veterinario(id)
-    );
-    
+        
+   
