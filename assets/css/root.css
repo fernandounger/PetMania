@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap');
+@import url('../css/login.css');
+
+:root{
+    --color:#FFF;
+    --primary-color:#EB7BC0;
+    --secondary-color:#1E96FC;
+    --black-color:#343633;
+    --royal-blue:#3083DC;
+    --sky-blue:#78C0DE;
+    --royal-pink:#C46BAE;
+}
+* {
+    padding:0;
+    margin:0;
+    list-style:none;
+    border:0;
+    outline:0;
+    box-sizing:border-box;
+    text-decoration:none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+    width: 8px;         
+  }
+body::-webkit-scrollbar-thumb {
+    background-color: #EB7BC0;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  /* creates padding around scroll thumb */
+}
