@@ -7,13 +7,6 @@ CREATE TABLE endereco(
     CEP			INT
     );
     
-    CREATE TABLE telefone(
-    id_tel		INT			auto_increment		PRIMARY KEY,
-    telefone	VARCHAR(20)
-    );
-    
-
-
 
 CREATE TABLE dono(
 id_dono		INT				auto_increment,
@@ -21,6 +14,7 @@ cpf			BIGINT 			unique,
 Nome		VARCHAR(150)	NOT NULL,
 email		VARCHAR(50),
 endereco	INT,
+telefone	VARCHAR(20),
 FOREIGN KEY(endereco) REFERENCES endereco(id_end),
 PRIMARY KEY(id_dono)
 );
@@ -65,6 +59,7 @@ nome_vet	VARCHAR(150)		NOT NULL,
 cpf			BIGINT				NOT NULL				unique,
 CRMV		BIGINT				NOT NULL,
 email		VARCHAR(150),
+telefone	VARCHAR(20),
 endereco	INT,
 FOREIGN KEY(endereco) REFERENCES endereco(id_end)
 );
@@ -106,21 +101,8 @@ CREATE TABLE ficha_medica(
 		FOREIGN KEY(id_servico) 		REFERENCES servico(id)
     );
     
-    CREATE TABLE dono_telefone(
-		id				INT			PRIMARY KEY auto_increment,
-        id_dono			INT,
-        id_tel			INT,
-        FOREIGN KEY(id_dono)	REFERENCES dono(id_dono),
-        FOREIGN KEY(id_tel)		REFERENCES telefone(id_tel)
-    );
-    
-    CREATE TABLE veterinario_telefone(
-		id				INT			PRIMARY KEY auto_increment,
-        id_vet			INT,
-        id_tel			INT,
-        FOREIGN KEY(id_vet)	REFERENCES veterinario(id_vet),
-        FOREIGN KEY(id_tel)		REFERENCES telefone(id_tel)
-    );
+   
     
     
     /*---------------------------*/
+    
