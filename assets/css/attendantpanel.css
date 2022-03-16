@@ -93,20 +93,39 @@ body{
     transform: translate(-50%, -50%);
     overflow: hidden;
 }
+
+/*Cadastrar Cliente*/
+.btn{
+    margin:8px auto;
+    width: 230px;
+    height: 46px;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/*Cadastrar Consulta*/
+
+/*Pacientes*/
 .table{
     width: 100%;
     text-align: center;
 }
 #thead {
     color: var(--color);
-    height: 30px;
+    height: 1.875rem;
     letter-spacing: 2px;
     background-color: var(--sky-blue);
 }
 tbody > tr{
     height: 30px;
 }
-
 
 
 
