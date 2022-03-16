@@ -1,5 +1,3 @@
-
- 
 CREATE TABLE endereco(
     id_end		INT			auto_increment		PRIMARY KEY,
     cidade		VARCHAR(150),
@@ -23,9 +21,7 @@ cpf			BIGINT 			unique,
 Nome		VARCHAR(150)	NOT NULL,
 email		VARCHAR(50),
 endereco	INT,
-telefone	INT,
 FOREIGN KEY(endereco) REFERENCES endereco(id_end),
-FOREIGN KEY(telefone) REFERENCES telefone(id_tel),
 PRIMARY KEY(id_dono)
 );
 
@@ -64,15 +60,13 @@ CREATE TABLE animal(
 
 /********************Criação Tabela Veterinário**********************************************/
 CREATE TABLE veterinario(
-id			INT					auto_increment			PRIMARY KEY,
+id_vet		INT					auto_increment			PRIMARY KEY,
 nome_vet	VARCHAR(150)		NOT NULL,
 cpf			BIGINT				NOT NULL				unique,
 CRMV		BIGINT				NOT NULL,
 email		VARCHAR(150),
 endereco	INT,
-telefone	INT,
-FOREIGN KEY(endereco) REFERENCES endereco(id_end),
-FOREIGN KEY(telefone) REFERENCES telefone(id_tel)
+FOREIGN KEY(endereco) REFERENCES endereco(id_end)
 );
 
 
@@ -83,32 +77,50 @@ FOREIGN KEY(telefone) REFERENCES telefone(id_tel)
 /*Criação Tabela ficha médica*/
 
 CREATE TABLE ficha_medica(
-	id_ficha		INT		auto_increment PRIMARY KEY,
-    id_animal		INT		NOT NULL,
-    data_visita		DATETIME	DEFAULT CURRENT_TIMESTAMP,
-    vet_id			INT		NOT NULL,
+	id_ficha		INT				auto_increment PRIMARY KEY,
+    id_animal		INT				NOT NULL,
+    data_visita		DATETIME		DEFAULT CURRENT_TIMESTAMP,
+    vet_id			INT				NOT NULL,
     motivo_visita	VARCHAR(300)	DEFAULT	'rotina',
     diagnostico		VARCHAR(300)	DEFAULT NULL,
     tratamento		VARCHAR(300),
     prescricao		VARCHAR(300)	DEFAULT NULL,
     observacoes		VARCHAR(300)	DEFAULT NULL,
     FOREIGN KEY(id_animal) 	REFERENCES animal(id_animal),
-    FOREIGN KEY(vet_id)		REFERENCES veterinario(id)
+    FOREIGN KEY(vet_id)		REFERENCES veterinario(id_vet)
 );
 
 	CREATE TABLE servico(
-		id				INT		auto_increment	PRIMARY KEY,
+		id				INT			auto_increment	PRIMARY KEY,
 		servico			VARCHAR(50)
     );
     
+    
+    /*-----------Tabelas Relação--------------------------*/
+    
     CREATE TABLE fichaM_Servicos(
-		id				INT		auto_increment	PRIMARY KEY,
+		id				INT			auto_increment	PRIMARY KEY,
 		id_ficha_medica	INT,
 		id_servico		INT,
-		FOREIGN KEY(id_ficha_medica) REFERENCES ficha_medica(id_ficha),
-		FOREIGN KEY(id_servico) REFERENCES servico(id)
+		FOREIGN KEY(id_ficha_medica)	REFERENCES ficha_medica(id_ficha),
+		FOREIGN KEY(id_servico) 		REFERENCES servico(id)
     );
     
+    CREATE TABLE dono_telefone(
+		id				INT			PRIMARY KEY auto_increment,
+        id_dono			INT,
+        id_tel			INT,
+        FOREIGN KEY(id_dono)	REFERENCES dono(id_dono),
+        FOREIGN KEY(id_tel)		REFERENCES telefone(id_tel)
+    );
+    
+    CREATE TABLE veterinario_telefone(
+		id				INT			PRIMARY KEY auto_increment,
+        id_vet			INT,
+        id_tel			INT,
+        FOREIGN KEY(id_vet)	REFERENCES veterinario(id_vet),
+        FOREIGN KEY(id_tel)		REFERENCES telefone(id_tel)
+    );
+    
+    
     /*---------------------------*/
-        
-   
