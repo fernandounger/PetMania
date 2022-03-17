@@ -43,7 +43,7 @@ CREATE TABLE animal(
     data_nasc		DATE,
     raca			INT,
     observacoes		VARCHAR(300),
-    FOREIGN KEY(id_animal) REFERENCES dono(id_dono),
+    FOREIGN KEY(id_dono) REFERENCES dono(id_dono),
     FOREIGN KEY (raca) REFERENCES raca(id_raca)
 );
     
