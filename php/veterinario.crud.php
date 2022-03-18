@@ -41,11 +41,11 @@ function atualizaFichaMedica($ficha){
         WHERE id_ficha = :idFicha
         ");
 
-        $stmt->bindParam(":diagnostico",$diagnostico);
-        $stmt->bindParam(":tratamento",$tratamento);
-        $stmt->bindParam(":prescricao",$prescricao);
-        $stmt->bindParam(":observacoes",$observacoes);
-        $stmt->bindParam(":idFicha",$idFicha);
+        $stmt->bindParam(":diagnostico",$ficha->diagnostico);
+        $stmt->bindParam(":tratamento",$ficha->tratamento);
+        $stmt->bindParam(":prescricao",$ficha->prescricao);
+        $stmt->bindParam(":observacoes",$ficha->observacoes);
+        $stmt->bindParam(":idFicha",$ficha->idFicha);
 
         if($stmt->execute()){
             return true;

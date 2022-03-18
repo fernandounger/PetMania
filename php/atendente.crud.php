@@ -30,10 +30,6 @@ function CadastroCliente($cliente){
                     return true;
                 }
                 
-                
-
-
-
             }
     }catch(PDOException $error){
         return "falha ao cadastrar o Cliente. Erro:{$error->getMessage()}";
@@ -44,6 +40,10 @@ function CadastroCliente($cliente){
     }
 }
 
+<<<<<<< HEAD
+=======
+#ainda não testada
+>>>>>>> 6c2119795eae208b202964505ed126b883eb14df
 function AtualizaCliente($cliente){
 
     try{
@@ -54,14 +54,22 @@ function AtualizaCliente($cliente){
         Nome = :Nome,
         email = :email,
         telefone = :telefone
+<<<<<<< HEAD
         WHERE id_dono = :id_dono");
+=======
+        WHERE id_dono = :idDono");
+>>>>>>> 6c2119795eae208b202964505ed126b883eb14df
     
     
         $stmt->bindParam(":cpf", $cliente->cpf);
         $stmt->bindParam(":Nome", $cliente->Nome);
         $stmt->bindParam(":email", $cliente->email);
         $stmt->bindParam(":telefone", $cliente->telefone);
+<<<<<<< HEAD
         $stmt->bindParam(":id_dono", $cliente->id_dono);
+=======
+        $stmt->bindParam(":idDono", $cliente->idDono);
+>>>>>>> 6c2119795eae208b202964505ed126b883eb14df
     
         if($stmt->execute()){
             unset($stmt);
@@ -92,6 +100,7 @@ function AtualizaCliente($cliente){
         unset($con);
         unset($stmt);
     }
+<<<<<<< HEAD
 }
 
 #### FUNÇÕES ANIMAL ####
@@ -153,6 +162,27 @@ function AtualizaAnimal($animal)
         unset($stmt);
     }
 }
+=======
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 6c2119795eae208b202964505ed126b883eb14df
 
 
 function Cadastro_Ficha_Medica($ficha){
