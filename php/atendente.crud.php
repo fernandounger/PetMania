@@ -68,4 +68,26 @@ function Cadastro_Ficha_Medica($ficha){
     }
 }
 
+#ainda não testada
+function servicosPrestados($servico){
+    try{
+        $con  = getConnection();
+        
+        $stmt = $con->prepare("INSERT INTO fichaM_Servicos(id_ficha_medica,id_servico) VALUES (:idFicha, :idServico)");
+        
+        $stmt->bindParam(":idFicha", $servico->idFicha);
+        $stmt->bindParam(":idServico",$servico->idServico);
 
+        if($stmt->execute()){
+            return true;
+        }
+    }
+    catch(PDOException $error){
+        return "Falha ao adicionar Servico. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }
+
+}
