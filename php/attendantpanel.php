@@ -22,12 +22,26 @@
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <button class="sidebar__button btn-client" role="button"><i class="fa-solid fa-user-pen"></i>
-                        Cadastrar Cliente</button>
-                    <button class="sidebar__button btn-consult" role="button"><i class="fa-solid fa-notes-medical"></i>
-                        Cadastrar Consulta</button>
-                    <button class="sidebar__button  btn-pacient" role="button"><i class="fa-solid fa-users"></i>
-                        Pacientes</button>
+                <a href="./registerclient.html">
+                        <button class="sidebar__button btn-client" role="button" type="button"><i
+                                class="fa-solid fa-user-pen"></i>
+                            Cadastrar Cliente</button>
+                    </a>
+                    <a href="./registeranimal.html">
+                        <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i
+                                class="fa-solid fa-paw"></i>
+                            Cadastrar Animal</button>
+                    </a>
+                    <a href="./registerconsult.html">
+                        <button class="sidebar__button btn-consult" role="button" type="button"><i
+                                class="fa-solid fa-notes-medical"></i>
+                            Cadastrar Consulta</button>
+                    </a>
+                    <a href="./attendantpanel.html">
+                        <button class="sidebar__button  btn-pacient" role="button" type="button"><i
+                                class="fa-solid fa-users"></i>
+                            Pacientes</button>
+                    </a>
                     <div></div>
                 </div>
             </div>
@@ -38,16 +52,6 @@
                     <h1 id="title">Pacientes Agendados</h1>
                 </div>
                 <div class="main-table">
-                    <div class="form-cliente" id="form-client" style="visibility: hidden;">
-                        <form action="" method="post">
-                                <button type="submit" class="btn-client btn">Cadastrar Cliente</button>
-                        </form>
-                    </div>
-                    <div class="form-consulta" style="visibility: hidden;">
-                        <form action="" method="post">
-                                <button type="submit" class="btn-consult btn">Cadastrar Consulta</button>
-                        </form>
-                    </div>
                     <div class="table-pacient">
                         <table class="table">
                                 <thead id="thead">
@@ -84,6 +88,5 @@
             </div>
         </main>
     </div>
-    <script src="../assets/js/panel.js"></script>
 </body>
 </html>
