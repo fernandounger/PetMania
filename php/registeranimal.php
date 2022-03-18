@@ -22,22 +22,22 @@
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <a href="./registerclient.html">
+                    <a href="./registerclient.php">
                         <button class="sidebar__button btn-client" role="button" type="button"><i
                                 class="fa-solid fa-user-pen"></i>
                             Cadastrar Cliente</button>
                     </a>
-                    <a href="./registeranimal.html">
+                    <a href="./registeranimal.php">
                         <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i
                                 class="fa-solid fa-paw"></i>
                             Cadastrar Animal</button>
                     </a>
-                    <a href="./registerconsult.html">
+                    <a href="./registerconsult.php">
                         <button class="sidebar__button btn-consult" role="button" type="button"><i
                                 class="fa-solid fa-notes-medical"></i>
                             Cadastrar Consulta</button>
                     </a>
-                    <a href="./attendantpanel.html">
+                    <a href="./attendantpanel.php">
                         <button class="sidebar__button  btn-pacient" role="button" type="button"><i
                                 class="fa-solid fa-users"></i>
                             Pacientes</button>
