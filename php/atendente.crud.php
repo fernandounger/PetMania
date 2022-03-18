@@ -263,7 +263,5 @@ function listaAnimais($busca){
     finally{
         unset($cont);
         unset($stmt);
-    }
-
-        
+    }        
 }
