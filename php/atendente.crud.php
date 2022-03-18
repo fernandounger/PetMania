@@ -45,7 +45,7 @@ function AtualizaCliente($cliente){
     try{
         $con = getConnection();
 
-        $stmt = $con->prepare("UPDATE cliente SET
+        $stmt = $con->prepare("UPDATE dono SET
         cpf = :cpf,
         Nome = :Nome,
         email = :email,
