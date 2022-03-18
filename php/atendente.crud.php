@@ -26,7 +26,7 @@ function CadastroCliente($cliente){
 
 
                 if($stmt->execute()){
-                    return "Cadastro realizado com sucesso";
+                    return true;
                 }
                 
                 
@@ -35,11 +35,37 @@ function CadastroCliente($cliente){
 
             }
     }catch(PDOException $error){
-        return "falha ao cadastrar o aluno. Erro:{$error->getMessage()}";
+        return "falha ao cadastrar o Cliente. Erro:{$error->getMessage()}";
     }
     finally{
         unset($con);
         unset($stmt);
     }
 }
+
+
+function Cadastro_Ficha_Medica($ficha){
+    try{
+        $con  = getConnection();
+
+        $stmt =  $con->prepare("INSERT INTO ficha_medica(id_animal,vet_id,motivo_visita) VALUES(:idAnimal,:idVet,:motivo)");
+
+        $stmt->bindParam(":idAnimal",$ficha->idAnimal);
+        $stmt->bindParam(":idVet",$ficha->idVet);
+        $stmt->bindParam(":motivo",$ficha->motivo);
+
+        if($stmt->execute()){
+            return true;
+        }
+
+    }
+    catch(PDOException $error){
+        return "Falha ao cadastrar a consulta/atendimento. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }
+}
+
 
