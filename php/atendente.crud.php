@@ -29,10 +29,6 @@ function CadastroCliente($cliente){
                     return true;
                 }
                 
-                
-
-
-
             }
     }catch(PDOException $error){
         return "falha ao cadastrar o Cliente. Erro:{$error->getMessage()}";
@@ -42,6 +38,75 @@ function CadastroCliente($cliente){
         unset($stmt);
     }
 }
+
+#ainda não testada
+function AtualizaCliente($cliente){
+
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("UPDATE cliente SET
+        cpf = :cpf,
+        Nome = :Nome,
+        email = :email,
+        telefone = :telefone
+        WHERE id_dono = :idDono");
+    
+    
+        $stmt->bindParam(":cpf", $cliente->cpf);
+        $stmt->bindParam(":Nome", $cliente->Nome);
+        $stmt->bindParam(":email", $cliente->email);
+        $stmt->bindParam(":telefone", $cliente->telefone);
+        $stmt->bindParam(":idDono", $cliente->idDono);
+    
+        if($stmt->execute()){
+            unset($stmt);
+    
+            $stmt = $con->prepare("UPDATE endereco SET
+            cidade = :cidade,
+            bairro = :bairro,
+            logradouro = :logradouro,
+            numero = :numero,
+            CEP = :CEP
+            WHERE id_end = :donoEndereco");
+    
+            $stmt->bindParam(":cidade",$cliente->cidade);
+            $stmt->bindParam(":bairro",$cliente->bairro);
+            $stmt->bindParam(":logradouro",$cliente->logradouro);
+            $stmt->bindParam(":numero",$cliente->numero);
+            $stmt->bindParam(":CEP",$cliente->CEP);
+            $stmt->bindParam(":donoEndereco",$cliente->endereco);
+    
+            if($stmt->execute()){
+                return true;
+            }
+        }
+    }catch(PDOException $error){
+        return "falha ao atualizar dados do Cliente. Erro:{$error->getMessage()}";
+    }
+    finally{
+        unset($con);
+        unset($stmt);
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function Cadastro_Ficha_Medica($ficha){
