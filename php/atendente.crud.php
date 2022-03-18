@@ -92,6 +92,29 @@ function servicosPrestados($servico){
 
 }
 
+#ainda não testada
+function removeServicos($remove){
+    try{
+        $con  = getConnection();
+        
+        $stmt = $con->prepare("DELETE FROM fichaM_Servicos WHERE id_ficha_medica = :idFicha AND id_servico = :idServico;");
+        
+        $stmt->bindParam(":idFicha", $remove->idFicha);
+        $stmt->bindParam(":idServico",$remove->idServico);
+
+        if($stmt->execute()){
+            return true;
+        }
+    }
+    catch(PDOException $error){
+        return "Falha ao remover Servico. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }
+}
+
 #template busca
 function listaAnimais($busca){
     try{
