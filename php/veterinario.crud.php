@@ -2,7 +2,6 @@
 
 require('./connection.php');
 
-
 function Cadastro_Ficha_Medica($ficha){
     try{
         $con  = getConnection();
