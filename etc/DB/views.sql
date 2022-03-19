@@ -1,3 +1,6 @@
+/***********VIEWS DA PARTE DO ATENDENTE**************************/
+
+
 /*-----View com tudo do Cliente------*/
 CREATE VIEW tudo_dono AS
 
@@ -28,8 +31,6 @@ ON dono.id_dono = animal.id_dono;
 # ----- VIEW FICHAS MEDICAS (ATENDENTE) ----- #
 CREATE VIEW fichas_Medicas AS	
 
-SELECT * FROM pp.veterinario;
-
 SELECT ficha_medica.id_ficha,
  ficha_medica.data_visita,
  animal.nome Nome_Animal,
@@ -44,3 +45,9 @@ JOIN dono ON animal.id_dono = dono.id_dono
 JOIN veterinario ON ficha_medica.vet_id = veterinario.id_vet
 JOIN ficham_servicos ON ficha_medica.id_ficha = ficham_servicos.id_ficha_medica
 JOIN servico ON ficham_servicos.id_servico = servico.id;
+
+
+
+
+
+/**************************************FIM VIEWS DA PARTE DO ATENDENTE*************************************************************/
