@@ -26,7 +26,7 @@ RIGHT JOIN animal
 ON dono.id_dono = animal.id_dono;
 
 # ----- VIEW FICHAS MEDICAS (ATENDENTE) ----- #
-CREATE VIEW pacientes_Agendados AS	
+CREATE VIEW fichas_Medicas AS	
 
 SELECT ficha_medica.id_ficha,
  ficha_medica.data_visita,
