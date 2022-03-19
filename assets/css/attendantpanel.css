@@ -121,7 +121,7 @@ body{
 .form-cliente{
     background-color: #FFF;
     width: 70vw;
-    height: 80vh;
+    height: 85vh;
     border-radius: 20px;
     position: absolute;
     top: 50%;
@@ -181,7 +181,7 @@ body{
     font-weight: 500;
     font-family: 'Barlow', sans-serif;
 }
-input[type=checkbox] {
+input[type=radio] {
     margin: 5px;
   }
 .box-check .m{
@@ -211,6 +211,7 @@ input[type=checkbox] {
     padding: 25px;
     padding-bottom: 10px;
     width: 100%;
+    height: 15rem;
     display: flex;
     flex-direction: column;
 }
