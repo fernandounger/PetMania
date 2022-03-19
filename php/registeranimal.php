@@ -7,7 +7,7 @@
     <title>Painel de Controle | Cadastrar Animal</title>
     <link rel="stylesheet" href="../assets/css/root.css">
     <link rel="stylesheet" href="../assets/css/attendantpanel.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
     <script src="https://kit.fontawesome.com/33abab1032.js" crossorigin="anonymous"></script>
@@ -55,31 +55,35 @@
                         <form action="" method="post">
                             <div class="form-container">
                                 <div class="box">
-                                    <div class="input__animal ipt">
-                                        <label for="animal" class="label">Animal:</label>
-                                        <input type="text" name="idAnimal" class="input" id="animal" placeholder="Gato, Cachorro">
-                                    </div>
-                                    <div class="input__nome">
+                                    <div class="input__nome ipt">
                                         <label for="nome" class="label">Nome Animal:</label>
-                                        <input type="text" id="nome" name="nomeAnimal" class="input" placeholder="Nome do Animal">
+                                        <input type="text" id="nome" name="nomeAnimal" class="input"
+                                            placeholder="Nome do Animal">
                                     </div>
-                                    <div class="input__data">
+                                    <div class="input__data ipt">
                                         <label for="dateanimal" class="label">Data de Nascimento:</label>
                                         <input type="date" id="dateanimal" name="dataNascimento" class="input">
                                     </div>
                                 </div>
                                 <div class="box">
-                                   
+
                                     <div class="ipt">
-                                        <label for="checkbox" class="label">Sexo:</label>
+                                        <label for="sexo" class="label">Sexo:</label>
                                         <div class="box-check">
-                                            <input type="checkbox" name="checkM" class="ckeckbox" id="checkbox"><span class="m">Macho</span>
-                                            <input type="checkbox" name="checkF" class="ckeckbox" id="checkbox"><span class="f">Fêmea</span>
+                                            <div>
+                                                <input type="radio" id="macho" name="sexo" value="m">
+                                                <label class="m">Macho</label>
+
+                                                <input type="radio" id="femea" name="sexo" value="f">
+                                                <label class="f">Fêmea</label>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="ipt">
                                         <label for="especie" class="label">Espécie:</label>
-                                        <input type="text" name="especie" class="input" id="especie" placeholder="Digite a espécie">
+                                        <input type="text" name="especie" class="input" id="especie"
+                                            placeholder="Digite a espécie">
                                     </div>
                                     <div class="ipt">
                                         <label for="select" class="label">Raça:</label>
