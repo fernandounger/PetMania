@@ -47,6 +47,23 @@ JOIN ficham_servicos ON ficha_medica.id_ficha = ficham_servicos.id_ficha_medica
 JOIN servico ON ficham_servicos.id_servico = servico.id;
 
 
+--------- VIEW FICHAS listagem de animais -----------
+
+CREATE VIEW tudo_animal AS
+SELECT animal.id_animal id,
+ animal.nome Nome,
+ animal.sexo Sexo,
+ animal.data_nasc Data_Nascimento,
+ animal.observacoes,
+ raca.nome_raca Raca,
+ especie.nome_especie especie,
+ dono.Nome Dono,
+ dono.id_dono
+FROM animal
+JOIN raca ON animal.raca = raca.id_raca
+JOIN especie ON raca.id_especie = especie.id_especie
+JOIN dono ON animal.id_dono = dono.id_dono;
+
 
 
 
