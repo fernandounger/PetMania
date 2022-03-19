@@ -28,14 +28,19 @@ ON dono.id_dono = animal.id_dono;
 # ----- VIEW FICHAS MEDICAS (ATENDENTE) ----- #
 CREATE VIEW fichas_Medicas AS	
 
+SELECT * FROM pp.veterinario;
+
 SELECT ficha_medica.id_ficha,
  ficha_medica.data_visita,
  animal.nome Nome_Animal,
  animal.id_animal,
  ficha_medica.motivo_visita,
  veterinario.nome_vet Veterinario, 
- dono.Nome Nome_Dono 
+ dono.Nome Nome_Dono,
+ servico.servico
 FROM ficha_medica 
 JOIN animal ON ficha_medica.id_animal = animal.id_animal 
 JOIN dono ON animal.id_dono = dono.id_dono
-JOIN veterinario ON ficha_medica.vet_id = veterinario.id_vet;
+JOIN veterinario ON ficha_medica.vet_id = veterinario.id_vet
+JOIN ficham_servicos ON ficha_medica.id_ficha = ficham_servicos.id_ficha_medica
+JOIN servico ON ficham_servicos.id_servico = servico.id;
