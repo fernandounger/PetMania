@@ -2,8 +2,8 @@
 
 require('./connection.php');
 
-#### FUNÇÕES CLIENTE ####
-function CadastroCliente($cliente){
+/************************************************  FUNÇÕES CLIENTE ****************************************************************************/
+function CadastroCliente($cliente){ #ok
     try{
         $con  = getConnection();
 
@@ -40,7 +40,10 @@ function CadastroCliente($cliente){
     }
 }
 
-function AtualizaCliente($cliente){
+
+/*********** */
+
+function AtualizaCliente($cliente){ #ok
 
     try{
         $con = getConnection();
@@ -90,8 +93,17 @@ function AtualizaCliente($cliente){
     }
 }
 
-#### FUNÇÕES ANIMAL ####
-function CadastroAnimal($animal)
+
+
+
+
+
+
+
+
+
+/******************** FUNÇÕES ANIMAL *********************************************************************************************/
+function CadastroAnimal($animal) #ok
 {
     try
     {
@@ -120,7 +132,9 @@ function CadastroAnimal($animal)
     }
 }
 
-function AtualizaAnimal($animal)
+
+/***************** */
+function AtualizaAnimal($animal) #ok
 {
     try
     {
@@ -151,7 +165,11 @@ function AtualizaAnimal($animal)
 }
 
 
-function Cadastro_Ficha_Medica($ficha){
+
+
+/*********************************** CADASTRO DE FICHA MÉDICA/CONSULTAS *************************/
+function Cadastro_Ficha_Medica($ficha) #ok
+{
     try{
         $con  = getConnection();
 
@@ -174,9 +192,16 @@ function Cadastro_Ficha_Medica($ficha){
         unset($stmt);
     }
 }
-##########################################################################
+
+
+
+
+
+
+#############################
 #ainda não testada
-function servicosPrestados($servico){
+function servicosPrestados($servico)
+{
     try{
         $con  = getConnection();
         
@@ -200,7 +225,8 @@ function servicosPrestados($servico){
 }
 
 #ainda não testada
-function removeServicos($remove){
+function removeServicos($remove) 
+{
     try{
         $con  = getConnection();
         
@@ -221,6 +247,17 @@ function removeServicos($remove){
         unset($stmt);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 #template busca
 function listaAnimais($busca){
