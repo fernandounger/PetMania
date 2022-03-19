@@ -1,5 +1,3 @@
-
-
 /*-----View com tudo do Cliente------*/
 CREATE VIEW tudo_dono AS
 
@@ -27,15 +25,17 @@ ON dono.endereco = endereco.id_end
 RIGHT JOIN animal
 ON dono.id_dono = animal.id_dono;
 
+# ----- VIEW FICHAS MEDICAS (ATENDENTE) ----- #
+CREATE VIEW pacientes_Agendados AS	
 
-
-# ----- VIEW CLIENTES CADASTRADOS ----- #
-CREATE VIEW Pacientes_Cadastrados AS
-SELECT dono.Nome Dono, animal.nome Animal, animal.raca FROM animal
-JOIN dono ON animal.id_dono = dono.id_dono;
-
-# ----- VIEW CLIENTES AGENDADOS ----- #
-CREATE VIEW Pacientes_Agendados AS
-SELECT dono.Nome Dono, animal.nome Animal, animal.raca Raça FROM ficha_medica 
+SELECT ficha_medica.id_ficha,
+ ficha_medica.data_visita,
+ animal.nome Nome_Animal,
+ animal.id_animal,
+ ficha_medica.motivo_visita,
+ veterinario.nome_vet Veterinario, 
+ dono.Nome Nome_Dono 
+FROM ficha_medica 
 JOIN animal ON ficha_medica.id_animal = animal.id_animal 
-JOIN dono ON animal.id_dono = dono.id_dono;
+JOIN dono ON animal.id_dono = dono.id_dono
+JOIN veterinario ON ficha_medica.vet_id = veterinario.id_vet;
