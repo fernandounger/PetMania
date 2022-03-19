@@ -57,40 +57,40 @@
                                  <div class="box"> 
                                      <div>
                                         <label for="cliente" class="label">Nome:</label>
-                                        <input type="text" name="idCliente" class="input" id="Nome" placeholder="Nome">
+                                        <input type="text" name="idCliente" class="input" id="nome" placeholder="Digite Seu Nome">
                                     </div>
                                     <div>
-                                        <label for="CPF" class="label">CPF:</label>
-                                        <input type="CPF" name="CPF" class="input" id="CPF" placeholder="000.000.000-00">
+                                        <label for="cpf" class="label">CPF:</label>
+                                        <input type="text" name="cpf" class="input" id="cpf" placeholder="000.000.000-00">
                                     </div>
                                     <div>
-                                        <label for="Email" class="label">Email:</label>
-                                        <input type="email" name="email" class="input" id="email" placeholder="Email">
+                                        <label for="email" class="label">Email:</label>
+                                        <input type="text" name="email" class="input" id="email" placeholder="Digite Seu Email">
                                     </div>
                                     <div>
                                         <label for="telefone" class="label">Telefone:</label>
-                                        <input type="tel" name="telefone" class="input" id="telefone" placeholder="(00) 00000-0000">
+                                        <input type="text" name="telefone" class="input" id="telefone" placeholder="(00) 00000-0000">
                                     </div>
                                 </div>
                                 <div class="box">
                                      <div>
-                                        <label for="Cidade" class="label">Cidade:</label>
-                                        <input type="text" name="cidade" class="input" id="cidade" placeholder="Rio de Janeiro">
+                                        <label for="cidade" class="label">Cidade:</label>
+                                        <input type="text" name="cidade" class="input" id="cidade" placeholder="Digite o Nome da Sua Cidade">
                                     </div>
                                     <div>
-                                        <label for="Bairro" class="label">Bairro:</label>
-                                        <input type="text" name="bairro" class="input" id="bairro" placeholder="Galeão">
+                                        <label for="bairro" class="label">Bairro:</label>
+                                        <input type="text" name="bairro" class="input" id="bairro" placeholder="Digite o Nome da Seu Bairro">
                                     </div>
                                     <div>
-                                        <label for="Logradouro" class="label">Logradouro:</label>
-                                        <input type="text" name="logradouro" class="input" id="logradouro" placeholder="Avenida, Travessa">
+                                        <label for="logradouro" class="label">Logradouro:</label>
+                                        <input type="text" name="logradouro" class="input" id="logradouro" placeholder="Digite o Seu Logradouro">
                                     </div>
                                     <div>
-                                        <label for="CEP" class="label">CEP:</label>
-                                        <input type="CEP" name="CEP" class="input" id="CEP" placeholder="00000-000">
+                                        <label for="cep" class="label">CEP:</label>
+                                        <input type="text" name="cep" class="input" id="cep" placeholder="00000-000">
                                     </div>
                                     <div>
-                                        <label for="Numero" class="label">Número:</label>
+                                        <label for="numero" class="label">Número:</label>
                                         <input type="text" name="numero" class="input" id="numero" placeholder="Nº da Casa / Apartamento">
                                     </div>
 
