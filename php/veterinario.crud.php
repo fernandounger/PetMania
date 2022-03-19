@@ -28,8 +28,7 @@ function Cadastro_Ficha_Medica($ficha){
 }
 
 
-
-function atualizaFichaMedica($ficha){  
+function atualizaFichaMedica($ficha){ #ok
     try{
         $con  = getConnection();
 
