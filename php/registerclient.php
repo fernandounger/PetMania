@@ -52,12 +52,12 @@
                 </div>
                 <div class="main-table">
                     <div class="form-cliente">
-                        <form action="" method="post">
+                        <form action="registerclient.redirect.php" method="post">
                             <div class="form-container">
                                  <div class="box"> 
                                      <div>
                                         <label for="cliente" class="label">Nome:</label>
-                                        <input type="text" name="idCliente" class="input" id="nome" placeholder="Digite Seu Nome">
+                                        <input type="text" name="nome_cliente" class="input" id="nome" placeholder="Digite Seu Nome">
                                     </div>
                                     <div>
                                         <label for="cpf" class="label">CPF:</label>
@@ -94,8 +94,8 @@
                                         <input type="text" name="numero" class="input" id="numero" placeholder="Nº da Casa / Apartamento">
                                     </div>
 
-                                </div>
-                                <button type="submit" class="cad-cliente btn">Cadastrar Cliente</button>                               
+                                </div>    
+                                <input type="submit" class="cad-cliente btn" value="Cadastrar Cliente">                         
 
                             </div>
                         </form>
