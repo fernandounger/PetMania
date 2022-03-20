@@ -22,22 +22,20 @@
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <a href="./listaclient.html">
-                        <button class="sidebar__button btn-client" role="button" type="button"><i
+                    <a href="./atendente.listar.cliente.php">
+                    <button class="sidebar__button btn-client" role="button" type="button"><i
                                 class="fa-solid fa-user-pen"></i>
                              Clientes</button>
                     </a>
-                    <a href="./listaanimal.html">
+                    <a href="./atendente.listar.animal.php">
                         <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i class="fa-solid fa-paw"></i>
                              Animais</button>
                     </a>
-                    <a href="./listaconsult.html">
+                    <a href="./atendente.listar.consulta.php">
                         <button class="sidebar__button btn-consult" role="button" type="button"><i
                                 class="fa-solid fa-notes-medical"></i>
                              Consultas</button>
                     </a>
-
-
                 </div>
             </div>
         </aside>

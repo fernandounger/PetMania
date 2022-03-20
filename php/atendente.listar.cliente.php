@@ -7,9 +7,9 @@
     <title>Painel de Controle | Atendente</title>
     <link rel="stylesheet" href="../assets/css/root.css">
     <link rel="stylesheet" href="../assets/css/attendantpanel.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
     <script src="https://kit.fontawesome.com/33abab1032.js" crossorigin="anonymous"></script>
 </head>
 
@@ -22,22 +22,20 @@
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <a href="./listaclient.html">
+                    <a href="./atendente.listar.cliente.php">
                         <button class="sidebar__button btn-client" role="button" type="button"><i
                                 class="fa-solid fa-user-pen"></i>
                              Clientes</button>
                     </a>
-                    <a href="./listaanimal.html">
+                    <a href="./atendente.listar.animal.php">
                         <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i class="fa-solid fa-paw"></i>
                              Animais</button>
                     </a>
-                    <a href="./listaconsult.html">
+                    <a href="./atendente.listar.consulta.php">
                         <button class="sidebar__button btn-consult" role="button" type="button"><i
                                 class="fa-solid fa-notes-medical"></i>
                              Consultas</button>
                     </a>
-
-
                 </div>
             </div>
         </aside>

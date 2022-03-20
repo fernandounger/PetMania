@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Controle | Cadastrar Animal</title>
-    <link rel="stylesheet" href="./assets/css/root.css">
-    <link rel="stylesheet" href="./assets/css/attendantpanel.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+    <title>Painel de Controle | Atendente</title>
+    <link rel="stylesheet" href="../assets/css/root.css">
+    <link rel="stylesheet" href="../assets/css/attendantpanel.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
     <script src="https://kit.fontawesome.com/33abab1032.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,29 +18,23 @@
         <aside class="sidebar">
             <div class="sidebar-container">
                 <div>
-                    <img src="./assets/img/logo/petmania-black-153.png" alt="Logomarca PetMania" height="105">
+                    <img src="../assets/img/logo/petmania-black-153.png" alt="Logomarca PetMania" height="105">
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <a href="./registerclient.php">
-                        <button class="sidebar__button btn-client" role="button" type="button"><i
+                    <a href="./atendente.listar.cliente.php">
+                    <button class="sidebar__button btn-client" role="button" type="button"><i
                                 class="fa-solid fa-user-pen"></i>
-                            Cadastrar Cliente</button>
+                             Clientes</button>
                     </a>
-                    <a href="./registeranimal.php">
-                        <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i
-                                class="fa-solid fa-paw"></i>
-                            Cadastrar Animal</button>
+                    <a href="./atendente.listar.animal.php">
+                        <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i class="fa-solid fa-paw"></i>
+                             Animais</button>
                     </a>
-                    <a href="./registerconsult.php">
+                    <a href="./atendente.listar.consulta.php">
                         <button class="sidebar__button btn-consult" role="button" type="button"><i
                                 class="fa-solid fa-notes-medical"></i>
-                            Cadastrar Consulta</button>
-                    </a>
-                    <a href="./attendantpanel.php">
-                        <button class="sidebar__button  btn-pacient" role="button" type="button"><i
-                                class="fa-solid fa-users"></i>
-                            Pacientes</button>
+                             Consultas</button>
                     </a>
                 </div>
             </div>
