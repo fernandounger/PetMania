@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -29,7 +32,7 @@
                 </div>
                 <div class="main-table">
                     <div class="table-pacient">
-                        <form action="./attendantpanel.html" class="searchbar" method="get">
+                        <form action="./redirect.consulta.listar.php" class="searchbar" method="get">
                             <input type="text" class="search__input" name="buscar">
                             <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
@@ -37,49 +40,30 @@
                             <thead id="thead">
                                 <tr>
                                     <th>ID Ficha</th>
-                                    <th>Data</th>
-                                    <th>Animal</th>
+                                    <th>especie</th>
+                                    <th>Nome</th>
                                     <th>Veterinário</th>
                                     <th>Dono</th>
                                     <th>Motivo</th>
+                                    <th>Data</th>
                                     <th><i class="fa-solid fa-plus"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>Arthur</th>
-                                    <td>Cachorro</td>
-                                    <td>Golden</td>
-                                    <td >mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Arthur</th>
-                                    <td>Cachorro</td>
-                                    <td>Golden</td>
-                                    <td >mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>
-
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Arthur</th>
-                                    <td>Cachorro</td>
-                                    <td>Golden</td>
-                                    <td >mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
+                                <?php foreach($_SESSION['consulta'] as $busca): ?>
+                                    <tr>
+                                        <td><?= $busca->id_ficha ?></td>
+                                        <td><?= $busca->especie ?></td>
+                                        <td><?= $busca->nome_animal ?></td>
+                                        <td><?= $busca->Veterinario ?></td>
+                                        <td><?= $busca->nome_dono ?></td>
+                                        <td><?= $busca->motivo_visita ?></td>
+                                        <td><?= $busca->data_visita ?></td>
+                                        <td>
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
