@@ -1,3 +1,4 @@
+<?php require_once('./redirect.animal.cadastro.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -50,8 +51,8 @@
                             <div class="form-container">
                                 <div class="box">
                                     <div class="input__nome ipt">
-                                        <label for="nome" class="label">Nome Animal:</label>
-                                        <input type="text" id="nome" name="nomeAnimal" class="input"
+                                        <label for="nome_animal" class="label">Nome Animal:</label>
+                                        <input type="text" id="nome" name="nome_animal" class="input"
                                             placeholder="Nome do Animal">
                                     </div>
                                     <div class="input__data ipt">
@@ -62,21 +63,20 @@
                                 <div class="box">
 
                                     <div class="ipt">
-                                        <label for="sexo" class="label">Sexo:</label>
+                                        <label for="sexo_animal" class="label">Sexo:</label>
                                         <div class="box-check">
                                             <div>
-                                                <input type="radio" id="macho" name="sexo" value="m">
+                                                <input type="radio" id="macho" name="sexo_animal" value="M">
                                                 <label class="m">Macho</label>
 
-                                                <input type="radio" id="femea" name="sexo" value="f">
+                                                <input type="radio" id="femea" name="sexo_animal" value="F">
                                                 <label class="f">Fêmea</label>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="ipt">
-                                        <label for="select" class="label">Raça:</label>
-                                        <select name="select" id="select" autofocus>
+                                        <label for="raca_animal" class="label">Raça:</label>
+                                        <select name="raca_animal" id="select" autofocus>
                                             <option value="" selected>Selecione a Raça</option>
                                             <option value="valor1">Valor 1</option>
                                             <option value="valor2">Valor 2</option>

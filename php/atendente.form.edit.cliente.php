@@ -42,11 +42,11 @@
         <main class="main-container">
             <div class="main-content">
                 <div class="container__title">
-                    <h1 id="title">Cadastrar Cliente</h1>
+                    <h1 id="title">Editar Cliente</h1>
                 </div>
                 <div class="main-table">
                     <div class="form-cliente">
-                        <form action="registerclient.redirect.php" method="post">
+                        <form action="cliente.listar.redirect.php" method="post">
                             <div class="form-container">
                                 <div class="cliente__box">
                                     <div class="ipt">
@@ -98,7 +98,7 @@
                                     </div>
 
                                 </div>
-                                <button type="submit" class="cad-cliente btn">Editar Consulta</button> 
+                                <button type="submit" class="cad-cliente btn">Editar Cliente</button> 
                             </div>
                     </div>
                     </form>
