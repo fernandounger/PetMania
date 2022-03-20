@@ -93,23 +93,34 @@ function AtualizaCliente($cliente){ #ok
     }
 }
 
-function ListaClientes()
+function ListaClientes($busca)
 { //ID, NOME, TELEFONE, EMAIL
     try {
         $con = getConnection();
         $result = array();
 
         $stmt = $con->prepare("SELECT id_dono, Nome, telefone, email 
-                               FROM dono");
+                               FROM dono WHERE Nome LIKE :termobusca 
+                               OR id_dono LIKE :termobusca");
 
-        if($stmt->execute()) {
-            if($stmt->rowCount() > 0) {
-                while($row = $stmt->fetch(PDO::FETCH_OBJ)){
-                    array_push($result,$row);
-                }
-                return $result;
-            }
+
+        if(is_numeric($busca)){
+            $stmt->bindParam(":termobusca",$busca);
+        }else{
+            $stmt->bindValue(":termobusca","%{$busca}%");
         }
+
+
+        $result = array();
+
+            if($stmt->execute()) {
+                if($stmt->rowCount() > 0) {
+                    while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                        array_push($result,$row);
+                    }
+                }
+            }
+        return $result;
 
 
     }catch(PDOException $error){
@@ -144,7 +155,7 @@ function CadastroAnimal($animal) #ok
             $stmt->bindParam(":sexo_animal",$animal->sexo_animal);
 
             if($stmt->execute()){
-            return "Cadastro de animal realizado com sucesso";
+            return true;
             }
     }
     catch(PDOException $error){
@@ -273,7 +284,7 @@ function removeServicos($remove)
 }
 
 #template busca
-function listaAnimais($busca){
+function listaAnimais2($busca){
     try{
         $con = getConnection();
 
@@ -346,7 +357,50 @@ function listaAnimaisID($busca){
 }
 
 
+function listaAnimais($busca){
+    try{
+        $con = getConnection();
 
+        $stmt = $con->prepare("SELECT 
+        id,
+        Nome,
+        Sexo,
+        Data_Nascimento,
+        Raca,
+        especie,
+        Dono
+        FROM tudo_animal 
+        WHERE nome LIKE :termobusca 
+        OR Dono LIKE :termobusca
+        OR id = :termobusca");
+
+
+        if(is_numeric($busca)){
+            $stmt->bindParam(":termobusca",$busca);
+        }else{
+            $stmt->bindValue(":termobusca","%{$busca}%");
+        }
+
+
+        $result = array();
+
+            if($stmt->execute()) {
+                if($stmt->rowCount() > 0) {
+                    while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                        array_push($result,$row);
+                    }
+                }
+            }
+        return $result;
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }        
+}
 
 
 
