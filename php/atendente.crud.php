@@ -345,6 +345,3 @@ function listaAnimaisID($busca){
         unset($stmt);
     }        
 }
-
-
-print_r(listaAnimaisID(1));
