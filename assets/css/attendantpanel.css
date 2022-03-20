@@ -107,6 +107,9 @@ body{
     height: 2.5rem;
     margin: 15px;
 }
+.input-n{
+    width: 6.25rem;
+}
 .label{
     font-weight: 700;
     font-size: 1.25rem;
@@ -121,7 +124,7 @@ body{
 .form-cliente{
     background-color: #FFF;
     width: 70vw;
-    height: 75vh;
+    height: 80vh;
     border-radius: 20px;
     position: absolute;
     top: 50%;
