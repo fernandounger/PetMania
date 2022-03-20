@@ -339,7 +339,35 @@ function listarFichas($busca){
 }
 
 
+function listarVeterinários(){
+    try{
+        $con = getConnection();
 
+        $stmt = $con->prepare("SELECT 
+        id_vet,
+        nome_vet
+        FROM veterinario");
+
+
+        $result = array();
+
+        if($stmt->execute()) {
+            if($stmt->rowCount() > 0) {
+                while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                    array_push($result,$row);
+                }
+            }
+        }
+        return $result;
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }
+}
 
 
 
@@ -458,7 +486,7 @@ function listaAnimais($busca){
         FROM tudo_animal 
         WHERE nome LIKE :termobusca 
         OR Dono LIKE :termobusca
-        OR id = :termobusca");
+        OR id = :termobusca ORDER BY id");
 
 
         if(is_numeric($busca)){
