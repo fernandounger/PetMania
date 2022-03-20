@@ -1,5 +1,5 @@
 <?php
-    session_start();
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,7 +19,7 @@
 <body id="body">
     <div class="container">
         <?php
-            include('./menu.php');
+        include('./menu.php');
         ?>
         <main class="main-container">
             <div class="main-content">
@@ -36,36 +36,39 @@
                             <input type="text" class="search__input" name="buscar">
                             <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
-                        <table class="table">
-                            <thead id="thead">
-                                <tr>
-                                    <th>ID Ficha</th>
-                                    <th>especie</th>
-                                    <th>Nome</th>
-                                    <th>Veterinário</th>
-                                    <th>Dono</th>
-                                    <th>Motivo</th>
-                                    <th>Data</th>
-                                    <th><i class="fa-solid fa-plus"></i></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach($_SESSION['consulta'] as $busca): ?>
+                        <div class="infinit__table">
+
+                            <table class="table">
+                                <thead id="thead">
                                     <tr>
-                                        <td><?= $busca->id_ficha ?></td>
-                                        <td><?= $busca->especie ?></td>
-                                        <td><?= $busca->nome_animal ?></td>
-                                        <td><?= $busca->Veterinario ?></td>
-                                        <td><?= $busca->nome_dono ?></td>
-                                        <td><?= $busca->motivo_visita ?></td>
-                                        <td><?= $busca->data_visita ?></td>
-                                        <td>
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </td>
+                                        <th>ID Ficha</th>
+                                        <th>especie</th>
+                                        <th>Nome</th>
+                                        <th>Veterinário</th>
+                                        <th>Dono</th>
+                                        <th>Motivo</th>
+                                        <th>Data</th>
+                                        <th><i class="fa-solid fa-plus"></i></th>
                                     </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($_SESSION['consulta'] as $busca) : ?>
+                                        <tr>
+                                            <td><?= $busca->id_ficha ?></td>
+                                            <td><?= $busca->especie ?></td>
+                                            <td><?= $busca->nome_animal ?></td>
+                                            <td><?= $busca->Veterinario ?></td>
+                                            <td><?= $busca->nome_dono ?></td>
+                                            <td><?= $busca->motivo_visita ?></td>
+                                            <td><?= $busca->data_visita ?></td>
+                                            <td>
+                                                <i class="fa-solid fa-pen-to-square"></i>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

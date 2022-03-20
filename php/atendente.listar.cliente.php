@@ -17,7 +17,7 @@
 <body id="body">
     <div class="container">
         <?php
-            include('./menu.php');
+        include('./menu.php');
         ?>
         <main class="main-container">
             <div class="main-content">
@@ -35,32 +35,35 @@
                             <input type="text" class="search__input" name="buscar">
                             <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
-                        <table class="table">
-                            <thead id="thead">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nome</th>
-                                    <th>Telefone</th>
-                                    <th>Email</th>
-                                    <th><i class="fa-solid fa-plus"></i></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    <?php foreach ($_SESSION['clientes'] as $cl) : ?>
+                        <div class="infinit__table">
+
+                            <table class="table">
+                                <thead id="thead">
                                     <tr>
-                                        <td><?= $cl->id_dono ?></td>
-                                        <td><?= $cl->Nome ?></td>
-                                        <td><?= $cl->telefone ?></td>
-                                        <td><?= $cl->email ?></td>
-                                        <td>
-                                            <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=1"><i class="fa-solid fa-dog"></i></a>
-                                            <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=2"><i class="fa-solid fa-cat"></i></a>
-                                            <a href="./redirect.action.editar.cliente.php?id_dono=<?= $cl->id_dono ?>"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        </td>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>Telefone</th>
+                                        <th>Email</th>
+                                        <th><i class="fa-solid fa-plus"></i></th>
                                     </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($_SESSION['clientes'] as $cl) : ?>
+                                        <tr>
+                                            <td><?= $cl->id_dono ?></td>
+                                            <td><?= $cl->Nome ?></td>
+                                            <td><?= $cl->telefone ?></td>
+                                            <td><?= $cl->email ?></td>
+                                            <td>
+                                                <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=1"><i class="fa-solid fa-dog"></i></a>
+                                                <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=2"><i class="fa-solid fa-cat"></i></a>
+                                                <a href="./redirect.action.editar.cliente.php?id_dono=<?= $cl->id_dono ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            </td>
+                                        </tr>
                                     <?php endforeach; ?>
-                            </tbody>
-                        </table>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
