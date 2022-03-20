@@ -93,7 +93,32 @@ function AtualizaCliente($cliente){ #ok
     }
 }
 
+function ListaClientes()
+{ //ID, NOME, TELEFONE, EMAIL
+    try {
+        $con = getConnection();
+        $result = array();
+        
+        $stmt = $con->prepare("SELECT id_dono, Nome, telefone, email 
+                               FROM tudo_dono");
 
+        if($stmt->execute()) {
+            if($stmt->rowCount() > 0) {
+                while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                    array_push($result,$row);
+                }
+                return $result;
+            }
+        }
+
+
+    }catch(PDOException $error){
+        return "falha ao cadastrar o animal. Erro:{$error->getMessage()}";
+    }finally{
+        unset($con);
+        unset($stmt);
+    }
+}
 
 
 

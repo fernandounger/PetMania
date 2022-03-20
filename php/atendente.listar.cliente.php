@@ -1,3 +1,4 @@
+<?php require_once('./cliente.listar.redirect.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -66,43 +67,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>Arthur</th>
-                                    <td>Cachorro</td>
-                                    <td>Golden</td>
-                                    <td class="info">mais informações</td>
-                                    <td class="info">
-                                        <i class="fa-solid fa-dog"></i>
-                                        <i class="fa-solid fa-cat"></i>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Paulo</th>
-                                    <td>Cachorro</td>
-                                    <td>Uauau</td>
-                                    <td >mais informações</td>
-                                    <td class="info">
-                                        <a href="./registeranimal.php?especie=1">
+                                    <?php foreach ($clientes as $cl) : ?>
+                                    <tr>
+                                        <td><?= $cl->id_dono ?></td>
+                                        <td><?= $cl->Nome ?></td>
+                                        <td><?= $cl->telefone ?></td>
+                                        <td><?= $cl->email ?></td>
+                                        <td>
                                             <i class="fa-solid fa-dog"></i>
-                                        </a>
-                                        <a href="./registeranimal.php?especie=2">
                                             <i class="fa-solid fa-cat"></i>
-                                        </a>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Fernando</th>
-                                    <td>Cachorro</td>
-                                    <td>Scooby Doo</td>
-                                    <td class="info">mais informações</td>
-                                    <td class="info" >
-                                        <i class="fa-solid fa-dog"></i>
-                                        <i class="fa-solid fa-cat"></i>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
