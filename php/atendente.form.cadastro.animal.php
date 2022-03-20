@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -46,7 +47,7 @@
                 </div>
                 <div class="main-table">
                     <div class="form-animal">
-                        <form action="redirect.animal.cadastro.php" method="post">
+                        <form action="redirect.animal.cadastro2.php" method="post">
                             <div class="form-container">
                                 <div class="box">
                                     <div class="input__nome ipt">
@@ -76,12 +77,14 @@
                                     <div class="ipt">
                                         <label for="raca_animal" class="label">Raça:</label>
                                         <select name="raca_animal" id="select" autofocus>
-                                            <option value="" selected>Selecione a Raça</option>
-                                            
+                                            <option value="" selected disabled>Selecione a Raça</option>
+                                            <?php foreach ($_SESSION['racas'] as $raca) : ?>
+                                            <option value="<?= $raca->id_raca ?>"><?= $raca->nome_raca ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="cad-animal btn" name="btn_id_dono" value="<?= $_GET['id_dono'] ?>">Cadastrar Animal</button>
+                                <button type="submit" class="cad-animal btn" name="btn_id_dono" value="<?= $_SESSION['id_dono'] ?>">Cadastrar Animal</button>
                             </div>
                         </form>
                     </div>
