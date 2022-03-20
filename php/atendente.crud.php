@@ -352,20 +352,27 @@ function listaAnimaisID($busca){
 
 
 
-function listaRacas(){
+function listaRacas($busca){
     try{
         $con = getConnection();
 
-        $stmt = $con->prepare("SELECT id_raca, id_especie,nome_raca
-        FROM raca");
+        $stmt = $con->prepare("SELECT id_raca, nome_raca
+        FROM raca WHERE id_especie = :termobusca");
 
+        
         $stmt->bindParam(":termobusca",$busca);
         
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_OBJ);   
-            
-        return $row;
-        
+
+        $result = array();
+
+            if($stmt->execute()) {
+                if($stmt->rowCount() > 0) {
+                    while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                        array_push($result,$row);
+                    }
+                }
+            }
+        return $result;
     }
     catch(PDOException $error){
         return "Falha ao procurar. Erro: {$error->getMessage()}";
@@ -375,3 +382,5 @@ function listaRacas(){
         unset($stmt);
     } 
 }
+
+var_dump(listaRacas(1));
