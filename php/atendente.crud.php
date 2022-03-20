@@ -383,4 +383,3 @@ function listaRacas($busca){
     } 
 }
 
-var_dump(listaRacas(1));
