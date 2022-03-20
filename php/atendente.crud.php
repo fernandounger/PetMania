@@ -98,7 +98,7 @@ function ListaClientes()
     try {
         $con = getConnection();
         $result = array();
-        
+
         $stmt = $con->prepare("SELECT id_dono, Nome, telefone, email 
                                FROM tudo_dono");
 
@@ -273,17 +273,6 @@ function removeServicos($remove)
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 #template busca
 function listaAnimais($busca){
     try{
@@ -307,7 +296,6 @@ function listaAnimais($busca){
             $stmt->bindValue(":nome","%{$busca}%");
         }
 
-
         $result = array();
 
             if($stmt->execute()) {
@@ -318,6 +306,38 @@ function listaAnimais($busca){
                 }
             }
         return $result;
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }        
+}
+
+function listaAnimaisID($busca){
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT 
+        id,
+        Nome,
+        Sexo,
+        Data_Nascimento,
+        Raca,
+        especie,
+        Dono
+        FROM tudo_animal 
+        WHERE id = :termobusca");
+
+        $stmt->bindParam(":termobusca",$busca);
+        
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_OBJ);   
+            
+        return $row;
+        
     }
     catch(PDOException $error){
         return "Falha ao procurar. Erro: {$error->getMessage()}";
