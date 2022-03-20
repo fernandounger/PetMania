@@ -134,15 +134,14 @@ function CadastroAnimal($animal) #ok
     {
         $con = getConnection();
 
-            $stmt = $con->prepare("INSERT INTO animal(id_dono,nome,sexo,data_nasc,raca,observacoes) 
-            VALUES(:id_dono,:nome_animal,:sexo_animal,:data_nasc,:raca_animal,:observacoes)");
+            $stmt = $con->prepare("INSERT INTO animal(id_dono,nome,sexo,data_nasc,raca) 
+            VALUES(:id_dono,:nome_animal,:sexo_animal,:data_nasc,:raca_animal)");
             
             $stmt->bindParam(":id_dono", $animal->id_dono);
             $stmt->bindParam(":data_nasc", $animal->data_nasc);
             $stmt->bindParam(":nome_animal",$animal->nome_animal);
             $stmt->bindParam(":raca_animal",$animal->raca_animal);
             $stmt->bindParam(":sexo_animal",$animal->sexo_animal);
-            $stmt->bindParam(":observacoes",$animal->observacoes);
 
             if($stmt->execute()){
             return "Cadastro de animal realizado com sucesso";
@@ -382,5 +381,3 @@ function listaRacas($busca){
         unset($stmt);
     } 
 }
-
-var_dump(listaRacas(1));
