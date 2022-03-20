@@ -66,5 +66,46 @@ JOIN dono ON animal.id_dono = dono.id_dono;
 
 
 
-
 /**************************************FIM VIEWS DA PARTE DO ATENDENTE*************************************************************/
+
+
+-- precisa ser testarda
+/*------ VIEW FICHA MÈDICA VETERINário*/
+
+CREATE VIEW tudo_ficha AS
+
+SELECT 
+ficha_medica.id_ficha				id_ficha,
+ficha_medica.data_visita			data_visita,
+ficha_medica.vet_id					id_veterinario,
+ficha_medica.motivo_visita			motivo_visita,
+ficha_medica.diagnostico			diagnostico,
+ficha_medica.tratamento				tratamento,
+ficha_medica.prescricao				prescricao,
+ficha_medica.observacoes			observacoes_ficha,
+
+animal.id_animal					id_animal,
+animal.id_dono						id_dono,
+animal.nome							nome_aniaml,
+animal.sexo							sexo,
+animal.data_nasc					data_nascimento,
+animal.observacoes					observacoes_animal,
+
+raca.nome_raca						raca,
+especie.nome_especie				especie,
+
+dono.Nome							nome_dono,
+
+veterinario.nome_vet 				Veterinario,
+
+servico.servico						Servico
+
+
+FROM ficha_medica 
+LEFT JOIN animal ON ficha_medica.id_animal = animal.id_animal 
+LEFT JOIN dono ON animal.id_dono = dono.id_dono
+LEFT JOIN veterinario ON ficha_medica.vet_id = veterinario.id_vet
+LEFT JOIN fichaM_Servicos ON ficha_medica.id_ficha = fichaM_Servicos.id_ficha_medica
+LEFT JOIN servico ON fichaM_Servicos.id_servico = servico.id
+LEFT JOIN raca ON animal.raca = raca.id_raca
+LEFT JOIN especie ON raca.id_especie = especie.id_especie
