@@ -283,49 +283,6 @@ function removeServicos($remove)
     }
 }
 
-#template busca
-function listaAnimais2($busca){
-    try{
-        $con = getConnection();
-
-        $stmt = $con->prepare("SELECT nome,
-        especie,
-        raca,
-        data_nasc,
-        nome_dono,
-        id_animal
-        FROM Tabela_Pacientes_cadastrados 
-        WHERE nome LIKE :termobusca 
-        OR nome_dono LIKE :termobusca
-        OR id_animal = :termobusca");
-
-
-        if(is_numeric($busca)){
-            $stmt->bindParam(":nome",$busca);
-        }else{
-            $stmt->bindValue(":nome","%{$busca}%");
-        }
-
-        $result = array();
-
-            if($stmt->execute()) {
-                if($stmt->rowCount() > 0) {
-                    while($row = $stmt->fetch(PDO::FETCH_OBJ)){
-                        array_push($result,$row);
-                    }
-                }
-            }
-        return $result;
-    }
-    catch(PDOException $error){
-        return "Falha ao procurar. Erro: {$error->getMessage()}";
-    }
-    finally{
-        unset($cont);
-        unset($stmt);
-    }        
-}
-
 function listaAnimaisID($busca){
     try{
         $con = getConnection();
