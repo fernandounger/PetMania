@@ -46,7 +46,7 @@
                         <h1 id="title">Animais</h1>
                     </div>
                     <div>
-                        <button class="btn__lista animal">Cadastrar Animal</button>
+                        <a href="./atendente.form.cadastro.animal.php" class="btn__lista animal">Cadastrar Animal</a>
                     </div>
                 </div>
                 <div class="main-table">
