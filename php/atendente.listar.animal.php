@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -27,7 +28,7 @@
                                 class="fa-solid fa-user-pen"></i>
                              Clientes</button>
                     </a>
-                    <a href="./atendente.listar.animal.php">
+                    <a href="./redirect.animal.listar.php">
                         <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i class="fa-solid fa-paw"></i>
                              Animais</button>
                     </a>
@@ -45,13 +46,10 @@
                     <div class="container__title">
                         <h1 id="title">Animais</h1>
                     </div>
-                    <div>
-                        <a href="./atendente.form.cadastro.animal.php" class="btn__lista animal">Cadastrar Animal</a>
-                    </div>
                 </div>
                 <div class="main-table">
                     <div class="table-pacient">
-                        <form action="./attendantpanel.html" class="searchbar" method="get">
+                        <form action="./redirect.animal.listar.php" class="searchbar" method="get">
                             <input type="text" class="search__input" name="buscar">
                             <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
@@ -69,41 +67,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th>Arthur</th>
-                                    <td>Cachorro</td>
-                                    <td>Golden</td>
-                                    <td >mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>
-                                        <i class="fa-solid fa-file-pen"></i>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Arthur</th>
-                                    <td>Cachorro</td>
-                                    <td>Golden</td>
-                                    <td >mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>
-                                        <i class="fa-solid fa-file-pen"></i>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th>Arthur</th>
-                                    <td>Cachorro</td>
-                                    <td>Golden</td>
-                                    <td >mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>mais informações</td>
-                                    <td>
-                                        <i class="fa-solid fa-file-pen"></i>
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </td>
+                                <?php foreach ($_SESSION['busca'] as $busca) : ?>
+                                    <tr>
+                                        <td><?= $busca->id ?></td>
+                                        <td><?= $busca->Nome ?></td>
+                                        <td><?= $busca->Sexo ?></td>
+                                        <td><?= $busca->Data_Nascimento ?></td>
+                                        <td><?= $busca->Raca ?></td>
+                                        <td><?= $busca->Dono ?></td>
+                                        <td>
+                                            <a><i class="fa-solid fa-file-pen"></i></a>
+                                            <a href="./redirect.animal.cadastro.php?id_dono=<?= $busca->id_dono ?>&id_especie=2"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    <?php endforeach; ?>
                                 </tr>
                             </tbody>
                         </table>
