@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -28,7 +28,7 @@
                                 class="fa-solid fa-user-pen"></i>
                              Clientes</button>
                     </a>
-                    <a href="./atendente.listar.animal.php">
+                    <a href="./redirect.animal.listar.php">
                         <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i class="fa-solid fa-paw"></i>
                              Animais</button>
                     </a>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="main-table">
                     <div class="table-pacient">
-                        <form action="./attendantpanel.html" class="searchbar" method="get">
+                        <form action="./redirect.cliente.listar.php" class="searchbar" method="get">
                             <input type="text" class="search__input" name="buscar">
                             <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
@@ -74,8 +74,8 @@
                                         <td><?= $cl->telefone ?></td>
                                         <td><?= $cl->email ?></td>
                                         <td>
-                                            <a href="./atendente.form.cadastro.animal.php?id_dono=<?= $cl->id_dono ?>&id_especie=1"><i class="fa-solid fa-dog"></i></a>
-                                            <a href="./atendente.form.cadastro.animal.php?id_dono=<?= $cl->id_dono ?>&id_especie=2"><i class="fa-solid fa-cat"></i></a>
+                                            <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=1"><i class="fa-solid fa-dog"></i></a>
+                                            <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=2"><i class="fa-solid fa-cat"></i></a>
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </td>
                                     </tr>
