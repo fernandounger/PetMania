@@ -345,3 +345,33 @@ function listaAnimaisID($busca){
         unset($stmt);
     }        
 }
+
+
+
+
+
+
+
+function listaRacas(){
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT id_raca, id_especie,nome_raca
+        FROM raca");
+
+        $stmt->bindParam(":termobusca",$busca);
+        
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_OBJ);   
+            
+        return $row;
+        
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    } 
+}
