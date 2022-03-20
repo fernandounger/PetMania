@@ -1,7 +1,7 @@
 body{
     width: 100vw;
     min-height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
     font-family: 'Dosis' , sans-serif;
 }
 .container{
@@ -282,6 +282,8 @@ select{
     background-color: var(--primary-color);
 }
 
+
+=======
 /*Cadastrar serviço*/
 .form-servico{
     background-color: #FFF;
@@ -354,16 +356,27 @@ select{
     background-color: var(--primary-color);
 }
 
+
 /*Pacientes*/
+
+.infinit__table{
+    max-height: 440px;
+    height: 100%;
+    overflow-x: hidden;
+}
 .table{
     width: 100%;
     text-align: center;
+    overflow-y: auto;
 }
 #thead {
     color: var(--color);
     height: 1.875rem;
     letter-spacing: 2px;
     background-color: var(--sky-blue);
+    width: 100%;
+    position: sticky;
+    top: 0;
 }
 tbody > tr{
     height: 30px;
