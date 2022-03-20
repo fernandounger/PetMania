@@ -75,11 +75,6 @@
                                         </div>
                                     </div>
                                     <div class="ipt">
-                                        <label for="especie" class="label">Espécie:</label>
-                                        <input type="text" name="especie" class="input" id="especie"
-                                            placeholder="Digite a espécie">
-                                    </div>
-                                    <div class="ipt">
                                         <label for="select" class="label">Raça:</label>
                                         <select name="select" id="select" autofocus>
                                             <option value="" selected>Selecione a Raça</option>
