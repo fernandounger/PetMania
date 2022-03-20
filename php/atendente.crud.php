@@ -325,9 +325,7 @@ function listaAnimaisID($busca){
         Nome,
         Sexo,
         Data_Nascimento,
-        Raca,
-        especie,
-        Dono
+        id_raca
         FROM tudo_animal 
         WHERE id = :termobusca");
 
@@ -347,3 +345,6 @@ function listaAnimaisID($busca){
         unset($stmt);
     }        
 }
+
+
+print_r(listaAnimaisID(1));
