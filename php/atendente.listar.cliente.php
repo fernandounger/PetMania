@@ -76,7 +76,7 @@
                                         <td>
                                             <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=1"><i class="fa-solid fa-dog"></i></a>
                                             <a href="./redirect.animal.cadastro.php?id_dono=<?= $cl->id_dono ?>&id_especie=2"><i class="fa-solid fa-cat"></i></a>
-                                            <a href="./action.editar.cliente.php?id_dono=<?= $cl->id_dono ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a href="./redirect.action.editar.cliente.php?id_dono=<?= $cl->id_dono ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
