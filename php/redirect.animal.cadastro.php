@@ -2,27 +2,16 @@
 
 require('./atendente.crud.php');
 
-if($_POST['data_nasc'] == NULL ||
-   $_POST['nome_animal'] == NULL ||
-   $_POST['raca_animal'] == NULL ||
-   $_POST['sexo_animal'] == NULL)
+session_start();
+
+if(isset($_GET['id_dono']) && !empty($_GET['id_dono']) && $_GET['id_dono'] != NULL)
 {
-    header('location: atendente.listar.cliente.php?status=acess-deny');
-	die();
+    $_SESSION['id_dono'] = $_GET['id_dono'];
+    
 }
-
-
-
-$animal = new stdClass();
-
-$animal->id_dono = $_POST['btn_id_dono'];
-$animal->data_nasc = $_POST['data_nasc'];
-$animal->nome_animal = $_POST['nome_animal'];
-$animal->raca_animal = $_POST['raca_animal'];
-$animal->sexo_animal = $_POST['sexo_animal'];
-
-if(CadastroAnimal($animal))
+if(isset($_GET['id_especie']) && !empty($_GET['id_especie']) && $_GET['id_especie'] != NULL)
 {
-    header('location atendente.listar.animal.php');
-    die();
+    $_SESSION['racas'] = listaRacas($_GET['id_especie']);
+    
+    header('location: atendente.form.cadastro.animal.php');
 }
