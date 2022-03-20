@@ -1,4 +1,4 @@
-<?php require_once('./cliente.listar.redirect.php'); ?>
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,7 +23,7 @@
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <a href="./atendente.listar.cliente.php">
+                <a href="./redirect.cliente.listar.php">
                         <button class="sidebar__button btn-client" role="button" type="button"><i
                                 class="fa-solid fa-user-pen"></i>
                              Clientes</button>
@@ -67,7 +67,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                    <?php foreach ($clientes as $cl) : ?>
+                                    <?php foreach ($_SESSION['clientes'] as $cl) : ?>
                                     <tr>
                                         <td><?= $cl->id_dono ?></td>
                                         <td><?= $cl->Nome ?></td>

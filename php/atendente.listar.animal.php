@@ -22,7 +22,7 @@
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <a href="./atendente.listar.cliente.php">
+                <a href="./redirect.cliente.listar.php">
                     <button class="sidebar__button btn-client" role="button" type="button"><i
                                 class="fa-solid fa-user-pen"></i>
                              Clientes</button>

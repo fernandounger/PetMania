@@ -1,4 +1,3 @@
-<?php require_once('./redirect.animal.cadastro.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -23,7 +22,7 @@
                     <h1>Atendente<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
-                    <a href="./atendente.listar.cliente.php">
+                    <a href="./redirect.cliente.listar.php">
                     <button class="sidebar__button btn-client" role="button" type="button"><i
                                 class="fa-solid fa-user-pen"></i>
                              Clientes</button>
@@ -47,7 +46,7 @@
                 </div>
                 <div class="main-table">
                     <div class="form-animal">
-                        <form action="" method="post">
+                        <form action="redirect.animal.cadastro.php" method="post">
                             <div class="form-container">
                                 <div class="box">
                                     <div class="input__nome ipt">
@@ -56,8 +55,8 @@
                                             placeholder="Nome do Animal">
                                     </div>
                                     <div class="input__data ipt">
-                                        <label for="dateanimal" class="label">Data de Nascimento:</label>
-                                        <input type="date" id="dateanimal" name="dataNascimento" class="input">
+                                        <label for="data_nasc" class="label">Data de Nascimento:</label>
+                                        <input type="date" id="dateanimal" name="data_nasc" class="input">
                                     </div>
                                 </div>
                                 <div class="box">
@@ -78,13 +77,11 @@
                                         <label for="raca_animal" class="label">Raça:</label>
                                         <select name="raca_animal" id="select" autofocus>
                                             <option value="" selected>Selecione a Raça</option>
-                                            <option value="valor1">Valor 1</option>
-                                            <option value="valor2">Valor 2</option>
-                                            <option value="valor3">Valor 3</option>
+                                            
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="cad-animal btn">Cadastrar Animal</button>
+                                <button type="submit" class="cad-animal btn" name="btn_id_dono" value="<?= $_GET['id_dono'] ?>">Cadastrar Animal</button>
                             </div>
                         </form>
                     </div>
