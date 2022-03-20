@@ -100,7 +100,7 @@ function ListaClientes()
         $result = array();
 
         $stmt = $con->prepare("SELECT id_dono, Nome, telefone, email 
-                               FROM tudo_dono");
+                               FROM dono");
 
         if($stmt->execute()) {
             if($stmt->rowCount() > 0) {
