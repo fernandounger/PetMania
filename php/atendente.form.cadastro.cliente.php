@@ -46,7 +46,7 @@
                 </div>
                 <div class="main-table">
                     <div class="form-cliente">
-                        <form action="cliente.cadastro.redirect.php" method="post">
+                        <form action="redirect.cliente.cadastro.php" method="post">
                             <div class="form-container">
                                 <div class="cliente__box">
                                     <div class="ipt">
