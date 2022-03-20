@@ -184,14 +184,14 @@ function listaAnimais($busca){
         Dono
         FROM tudo_animal 
         WHERE nome LIKE :termobusca 
-        OR nome_dono LIKE :termobusca
+        OR Dono LIKE :termobusca
         OR id = :termobusca");
 
 
         if(is_numeric($busca)){
-            $stmt->bindParam(":nome",$busca);
+            $stmt->bindParam(":termobusca",$busca);
         }else{
-            $stmt->bindValue(":nome","%{$busca}%");
+            $stmt->bindValue(":termobusca","%{$busca}%");
         }
 
 
@@ -214,6 +214,8 @@ function listaAnimais($busca){
         unset($stmt);
     }        
 }
+
+var_dump(listaAnimais('Pochi2'));
 
 
 
