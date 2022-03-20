@@ -47,7 +47,7 @@
                         <h1 id="title">Clientes</h1>
                     </div>
                     <div>
-                        <button class="btn__lista cliente">Cadastrar Cliente</button>
+                        <a href="./atendente.form.cadastro.cliente.php" class="btn__lista cliente">Cadastrar Cliente</a>
                     </div>
                 </div>
                 <div class="main-table">
