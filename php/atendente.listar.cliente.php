@@ -74,8 +74,8 @@
                                         <td><?= $cl->telefone ?></td>
                                         <td><?= $cl->email ?></td>
                                         <td>
-                                            <i class="fa-solid fa-dog"></i>
-                                            <i class="fa-solid fa-cat"></i>
+                                            <a href="./atendente.form.cadastro.animal.php?id_dono=<?= $cl->id_dono ?>&id_especie=1"><i class="fa-solid fa-dog"></i></a>
+                                            <a href="./atendente.form.cadastro.animal.php?id_dono=<?= $cl->id_dono ?>&id_especie=2"><i class="fa-solid fa-cat"></i></a>
                                             <i class="fa-solid fa-pen-to-square"></i>
                                         </td>
                                     </tr>
