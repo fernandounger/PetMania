@@ -339,7 +339,7 @@ function listarFichas($busca){
 }
 
 
-function listarVeterinários(){
+function listarVeterinarios(){
     try{
         $con = getConnection();
 
