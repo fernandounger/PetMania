@@ -32,20 +32,13 @@
                                     <div class="box">
                                     <div class="input__animal ipt">
                                         <label for="animal" class="label">Animal:</label>
-                                        <input type="text" name="idAnimal" class="input" id="animal" value="Scooby" readonly>
+                                        <input type="text" name="idAnimal" class="input" id="animal" value="<?= $_GET['nome_animal']?>" disabled>
                                     </div>
-                                    <div class="input__data">
-                                        <label for="date" class="label">Data Agendada:</label>
-                                        <input type="date" id="date" name="dataAgendada" class="input" value="18/03/2022" readonly>
-                                    </div>
+                                    
                                 </div>
                                 <div class="box">
                                     <div class="ipt">
-                                        <label for="veterinario" class="label">Veterinário:</label>
-                                        <input type="text" name="idVeterinario" class="input" id="veterinario" value="Joselito" readonly>
-                                    </div>
-                                    <div class="ipt">
-                                        <label for="select" class="label">Serviços:</label>
+                                        <label for="select" class="label">Veterinario:</label>
                                         <select name="select" id="select" autofocus>
                                             <option value="" selected>Escolha um serviço</option>
                                             <option value="valor1">Valor 1</option>
