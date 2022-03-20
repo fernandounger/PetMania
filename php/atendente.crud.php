@@ -215,15 +215,57 @@ function listaAnimais($busca){
     }        
 }
 
-var_dump(listaAnimais('Pochi2'));
 
 
 
 
 
+function listaAnimaisID($busca){
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT 
+        id,
+        Nome,
+        Sexo,
+        Data_Nascimento,
+        Raca,
+        especie,
+        Dono
+        FROM tudo_animal 
+        WHERE id = :termobusca");
 
 
+        $stmt->bindParam(":termobusca",$busca);
+        
 
+
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_OBJ);
+                        
+                    
+                
+            
+        return $row;
+        
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }        
+}
+
+
+/*var_dump(listaAnimais(1));
+
+echo "<br>";
+echo "<br>";
+echo "<br>";
+
+print_r(listaAnimaisID(1));*/
 
 
 
