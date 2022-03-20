@@ -46,7 +46,7 @@
                 </div>
                 <div class="main-table">
                     <div class="form-cliente">
-                        <form action="registerclient.redirect.php" method="post">
+                        <form action="cadastro.cliente.redirect.php" method="post">
                             <div class="form-container">
                                 <div class="cliente__box">
                                     <div class="ipt">
@@ -98,7 +98,7 @@
                                     </div>
 
                                 </div>
-                                <input type="submit" class="cad-cliente btn" value="Cadastrar Cliente">
+                                <button type="submit" class="cad-cliente btn">Cadastrar Cliente</button>
                             </div>
                     </div>
                     </form>
