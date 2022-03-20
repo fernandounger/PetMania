@@ -103,6 +103,8 @@ function AtualizaCliente($cliente){ #ok
 
 
 /******************** FUNÇÕES ANIMAL *********************************************************************************************/
+
+#Cadastro
 function CadastroAnimal($animal) #ok
 {
     try
@@ -134,6 +136,8 @@ function CadastroAnimal($animal) #ok
 
 
 /***************** */
+
+#Atualização
 function AtualizaAnimal($animal) #ok
 {
     try
@@ -163,6 +167,80 @@ function AtualizaAnimal($animal) #ok
         unset($stmt);
     }
 }
+
+/*************************************** */
+#busca
+function listaAnimais($busca){
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT 
+        id,
+        Nome,
+        Sexo,
+        Data_Nascimento,
+        Raca,
+        especie,
+        Dono
+        FROM tudo_animal 
+        WHERE nome LIKE :termobusca 
+        OR nome_dono LIKE :termobusca
+        OR id = :termobusca");
+
+
+        if(is_numeric($busca)){
+            $stmt->bindParam(":nome",$busca);
+        }else{
+            $stmt->bindValue(":nome","%{$busca}%");
+        }
+
+
+        $result = array();
+
+            if($stmt->execute()) {
+                if($stmt->rowCount() > 0) {
+                    while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                        array_push($result,$row);
+                    }
+                }
+            }
+        return $result;
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }        
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -260,16 +338,18 @@ function removeServicos($remove)
 
 
 #template busca
-function listaAnimais($busca){
+function templatebusca($busca){
     try{
         $con = getConnection();
 
-        $stmt = $con->prepare("SELECT nome,
+        $stmt = $con->prepare("SELECT 
+        id,
+        Nome,
+        Sexo,
+        Data_Nascimento,
+        Raca,
         especie,
-        raca,
-        data_nasc,
-        nome_dono,
-        id_animal
+        Dono
         FROM Tabela_Pacientes_cadastrados 
         WHERE nome LIKE :termobusca 
         OR nome_dono LIKE :termobusca
