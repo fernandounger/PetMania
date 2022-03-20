@@ -41,7 +41,7 @@ function CadastroCliente($cliente){ #ok
 }
 
 
-/*********** */
+/******Atualização***** */
 
 function AtualizaCliente($cliente){ #ok
 
@@ -93,6 +93,65 @@ function AtualizaCliente($cliente){ #ok
     }
 }
 
+#listagem para preencher o edit
+function listaClienteID($busca){
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT id_dono,cpf, Nome, telefone, email,endereco 
+                               FROM dono WHERE id_dono = :termobusca");
+
+        $stmt->bindParam(":termobusca",$busca);
+        
+        if($stmt->execute()){
+            $dados_cliente = $stmt->fetch(PDO::FETCH_OBJ);
+
+            unset($stmt);
+
+            $stmt = $con->prepare("SELECT id_end,cidade,bairro,logradouro,numero,CEP 
+                               FROM endereco WHERE id_end = :termobusca");
+
+            
+            $stmt->bindParam(":termobusca",$dados_cliente->endereco);
+
+            $stmt->execute();
+            
+
+            $dados_endereco = $stmt->fetch(PDO::FETCH_OBJ);
+            
+            #fusao dos dados do cliente com os dados do endereco dele
+            $d_cli_end = (object) array_merge(
+                (array) $dados_cliente, (array) $dados_endereco
+            );
+
+        }
+        
+        
+
+
+            
+        return $d_cli_end;
+        
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }        
+}
+
+
+
+
+
+
+
+
+
+
+
 function ListaClientes($busca)
 { //ID, NOME, TELEFONE, EMAIL
     try {
@@ -130,6 +189,21 @@ function ListaClientes($busca)
         unset($stmt);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
