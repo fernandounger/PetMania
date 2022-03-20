@@ -25,7 +25,7 @@
                 </div>
                 <div class="main-table">
                     <div class="form-consulta">
-                        <form action="" method="post">
+                        <form action="./action.cadastrar.consulta.php" method="post">
                             <div class="form-content">
 
                                 <div class="form-container">
@@ -42,8 +42,6 @@
                                         <select name="select" id="select" autofocus>
                                             <option value="" selected>Escolha um serviço</option>
                                             <option value="valor1">Valor 1</option>
-                                            <option value="valor2">Valor 2</option>
-                                            <option value="valor3">Valor 3</option>
                                         </select>
                                     </div>
                                 </div>
