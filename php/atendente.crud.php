@@ -196,22 +196,6 @@ function ListaClientes($busca)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /******************** FUNÇÕES ANIMAL *********************************************************************************************/
 function CadastroAnimal($animal) #ok
 {
@@ -276,6 +260,13 @@ function AtualizaAnimal($animal) #ok
 
 
 
+
+
+
+
+
+
+
 /*********************************** CADASTRO DE FICHA MÉDICA/CONSULTAS *************************/
 function Cadastro_Ficha_Medica($ficha) #ok
 {
@@ -301,6 +292,70 @@ function Cadastro_Ficha_Medica($ficha) #ok
         unset($stmt);
     }
 }
+
+function listarFichas($busca){
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT 
+        id_ficha,
+        data_visita,
+        especie,
+        nome_animal,
+        Veterinario,
+        nome_dono,
+        motivo_visita
+        FROM tudo_ficha 
+        WHERE nome_animal LIKE :termobusca 
+        OR nome_dono LIKE :termobusca
+        OR id_ficha = :termobusca");
+
+
+        if(is_numeric($busca)){
+            $stmt->bindParam(":termobusca",$busca);
+        }else{
+            $stmt->bindValue(":termobusca","%{$busca}%");
+        }
+
+
+        $result = array();
+
+            if($stmt->execute()) {
+                if($stmt->rowCount() > 0) {
+                    while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                        array_push($result,$row);
+                    }
+                }
+            }
+        return $result;
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
