@@ -15,7 +15,7 @@
                     <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i class="fa-solid fa-paw"></i>
                          Animais</button>
                 </a>
-                <a href="./atendente.listar.consulta.php">
+                <a href="./redirect.consulta.listar.php">
                     <button class="sidebar__button btn-consult" role="button" type="button"><i
                             class="fa-solid fa-notes-medical"></i>
                          Consultas</button>
