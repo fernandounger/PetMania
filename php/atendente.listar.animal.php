@@ -60,7 +60,6 @@
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
