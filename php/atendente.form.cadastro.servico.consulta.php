@@ -29,7 +29,7 @@ $_SESSION['todosservicos'];
                 </div>
                 <div class="main-table">
                     <!--Rafael: tentativa de fazer a listagem de serviços-->    
-                    <div class="main-table" style="position:relative; top:465px;">
+                    <div class="main-table" style="position:relative; top:500px; height: 20px; z-index: 5;">
                         <div class="table-pacient" >
                             
                             <div class="infinit__table" style="position:relative; top:10px;">
@@ -62,8 +62,8 @@ $_SESSION['todosservicos'];
                         </div>
                     </div>
                     <!--FIM da tentativa do Rafael-->
-                    <div class="form-servico">
-                        <form action="action.adicionar.servico.php" method="post">
+                    <div class="form-servico" style="z-index: 4;">
+                        <form action="action.adicionar.servico.php" method="post" id="cadservico">
                             <div class="form-container">
                             <div class="box">    
                             </div>                            
@@ -80,14 +80,14 @@ $_SESSION['todosservicos'];
                                     </div>                                  
                                 </div>
                                 <div class="box">    
-                            </div>                                
-                                <button type="submit" class="cad-servico btn" name="idficha" value="<?= $_GET['idficha'] ?>">Cadastrar Serviço</button>
-                            </div>
-                        </form>
+                                    </div>                                
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
+            <button form="cadservico" style="z-index: 10;" type="submit" class="cad-servico btn" name="idficha" value="<?= $_GET['idficha'] ?>">Cadastrar Serviço</button>
     </div>
 </body>
 
