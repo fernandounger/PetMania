@@ -437,3 +437,6 @@ tbody > tr{
     color: var(--color);
     cursor: pointer;
 }
+.fa-eraser{
+ color:red;
+}
