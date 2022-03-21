@@ -62,7 +62,7 @@ $_SESSION['todosservicos'];
                                             <th>Servico</th>
                                             
     
-                                            <th><i class="fa-solid fa-plus"></i></th>
+                                            <th>Remover</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -72,7 +72,7 @@ $_SESSION['todosservicos'];
                                                 <td><?= $servico->nome_servico ?></td>
                                                 
                                                 <td>
-                                                    <a href="./redirect.deletar.servico.php?idservico=<?= $servico->id_servico ?>&idficha=<?= $_GET['idficha']?>" onclick="return confirm('Deseja realmente deletar o serviço?')">Remover <i class="fa-solid fa-file-pen"></i></a>
+                                                    <a href="./redirect.deletar.servico.php?idservico=<?= $servico->id_servico ?>&idficha=<?= $_GET['idficha']?>" onclick="return confirm('Deseja realmente deletar o serviço?')"><i class="fa-solid fa-eraser"></i></a>
                                                     
                                                 </td>
                                             </tr>
