@@ -32,7 +32,7 @@
                                     <div class="box box-p">
                                         <div class="input__ficha">
                                             <label for="idFicha" class="label">Ficha: </label>
-                                            <input type="text" class="input" name="idFicha" id="idFicha" value="<?= $_SESSION['atualiza_ficha']->id_ficha ?>" disabled>
+                                            <input type="text" class="input" id="idFicha" value="<?= $_SESSION['atualiza_ficha']->id_ficha ?>" disabled>
                                         </div>
                                         <div class="input__data">
                                             <label for="dataAgendada" class="label">Data:</label>
@@ -53,19 +53,19 @@
                                 <div class="container__area">
                                     <label for="motivo" class="label">Motivo:</label>
                                     <textarea name="motivo" id="motivo" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->motivo_visita ?></textarea>
-                                    <label for="" class="label">Diagnostico:</label>
+                                    <label for="diagnostico" class="label">Diagnostico:</label>
                                     <textarea name="diagnostico" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->diagnostico ?></textarea>
-                                    <label for="" class="label">Tratamento:</label>
+                                    <label for="tratamento" class="label">Tratamento:</label>
                                     <textarea name="tratamento" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->tratamento ?></textarea>
-                                    <label for="" class="label">Prescrição:</label>
+                                    <label for="prescricao" class="label">Prescrição:</label>
                                     <textarea name="prescricao" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->prescricao ?></textarea>
-                                    <label for="" class="label">Observações:</label>
-                                    <textarea name="observacao" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->observacoes ?></textarea>
+                                    <label for="observacoes" class="label">Observações:</label>
+                                    <textarea name="observacoes" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->observacoes ?></textarea>
                                 </div>
                                 
                                 
                                 
-                                <button type="submit" name="idAnimal" class="btn-ficha">Atualizar Ficha</button>
+                                <button type="submit"  class="btn-ficha" name="idFicha" value="<?= $_SESSION['atualiza_ficha']->id_ficha ?>">Atualizar Ficha</button>
                             </form>
                         </div>
                 </div>
