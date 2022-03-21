@@ -32,7 +32,7 @@ session_start();
                 </div>
                 <div class="main-table">
                     <div class="table-pacient">
-                        <form action="./redirect.consulta.listar.veterinario.php" class="searchbar" method="get">
+                        <form action="./redirect.veterinario.listar.consulta.php" class="searchbar" method="get">
                             <input type="text" class="search__input" name="buscar">
                             <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
