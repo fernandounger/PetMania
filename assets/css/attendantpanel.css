@@ -240,6 +240,7 @@ input[type=radio] {
     width: 100%;
     height: 20rem;
 }
+
 select{
     padding: 5px;
     background: var(--sky-blue);
@@ -283,7 +284,7 @@ select{
 }
 
 
-=======
+
 /*Cadastrar serviço*/
 .form-servico{
     background-color: #FFF;
@@ -314,6 +315,7 @@ select{
     width: 100%;
     height: 20rem;
 }
+
 select{
     padding: 5px;
     background: var(--sky-blue);
@@ -373,7 +375,7 @@ select{
     color: var(--color);
     height: 1.875rem;
     letter-spacing: 2px;
-    background-color: var(--sky-blue);
+    background-color: green;
     width: 100%;
     position: sticky;
     top: 0;
@@ -440,3 +442,52 @@ tbody > tr{
 .fa-eraser{
  color:red;
 }
+/* FIcha */
+.form-ficha{
+    background-color: #FFF;
+    width: 70vw;
+    height: 80vh;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+}
+.ficha-container{
+    display: flex;
+    align-items: center;
+}
+.box-p{
+    padding: 20px;
+}
+.container__area{
+    padding: 25px;
+    padding-top: 0;
+    width: 100%;
+    height: 20rem;
+}
+.ficha__textarea{
+    background: #e2e2e2;
+    padding: 5px;
+    height: 5.5rem;
+    resize:none;
+    display: block;
+    width: 100%;
+    color: var(--black-color);
+}
+.btn-ficha{
+    margin: 8px auto;
+    width: 14.375rem;
+    height: 2.875rem;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: 'Barlow', sans-serif;
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+.btn__main{
+    display: flex;
+} 
