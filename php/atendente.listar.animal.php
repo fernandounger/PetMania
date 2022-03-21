@@ -57,7 +57,7 @@
                                             <td><?= $busca->Raca ?></td>
                                             <td><?= $busca->Dono ?></td>
                                             <td>
-                                                <a href="./redirect.cadastro.consulta.php?id_animal=<?= $busca->id ?>&nome_animal=<?= $busca->Nome ?>"><i class="fa-solid fa-file-pen"></i></a>
+                                                <a href="./redirect.cadastro.consulta.php?idAnimal=<?= $busca->id ?>&nomeAnimal=<?= $busca->Nome ?>"><i class="fa-solid fa-file-pen"></i></a>
                                                 <a href="./redirect.animal.cadastro.php?id_dono=<?= $busca->id_dono ?>&id_especie=2"><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                         </tr>
