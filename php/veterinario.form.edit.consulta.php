@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -21,53 +22,52 @@
         <main class="main-container">
             <div class="main-content">
                 <div class="container__title btn__main">
-                    <button type="submit" name="idAnimal" value="<?= $_GET['idAnimal'] ?>" class=" btn-ficha">Atualizar
-                        Ficha</button>
-                </div>
-                <div class="main-table">
-                    <div class="form-ficha">
-                        <form action="./action.cadastrar.consulta.php" method="post">
-                            <div class="form-content">
-
+                    </div>
+                    <div class="main-table">
+                        <div class="form-ficha">
+                            <form action="./action.atualizar.ficha.php" method="post">
+                                <div class="form-content">
+                                    
                                 <div class="ficha-container">
                                     <div class="box box-p">
                                         <div class="input__ficha">
                                             <label for="idFicha" class="label">Ficha: </label>
-                                            <input type="text" class="input" id="idFicha" value="<?= $_GET['nomeAnimal'] ?>" disabled>
+                                            <input type="text" class="input" name="idFicha" id="idFicha" value="<?= $_SESSION['atualiza_ficha']->id_ficha ?>" disabled>
                                         </div>
                                         <div class="input__data">
                                             <label for="dataAgendada" class="label">Data:</label>
-                                            <input type="date" class="input" id="dataAgendada" value="<?= $_GET['nomeAnimal'] ?>" disabled>
+                                            <input type="text" class="input" id="dataAgendada" value="<?= $_SESSION['atualiza_ficha']->data_visita ?>" disabled>
                                         </div>
                                     </div>
                                     <div class="box box-p">
                                         <div class="input__animal">
                                             <label for="idAnimal" class="label">Animal:</label>
-                                            <input type="text" class="input" id="idAnimal" value="<?= $_GET['nomeAnimal'] ?>" disabled>
+                                            <input type="text" class="input" id="idAnimal" value="<?= $_GET['nomeanimal'] ?>" disabled>
                                         </div>
                                         <div class="">
                                             <label for="select" class="label">Veterinario:</label>
-                                            <input type="text" class="input" id="animal" value="<?= $_GET['nomeAnimal'] ?>" disabled>
+                                            <input type="text" class="input" id="animal" value="<?= $_GET['Veterinario'] ?>" disabled>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="container__area">
-                                    <label for="" class="label">Motivo:</label>
-                                    <textarea name="motivo" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""></textarea>
+                                    <label for="motivo" class="label">Motivo:</label>
+                                    <textarea name="motivo" id="motivo" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->motivo_visita ?></textarea>
                                     <label for="" class="label">Diagnostico:</label>
-                                    <textarea name="diagnostico" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""></textarea>
+                                    <textarea name="diagnostico" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->diagnostico ?></textarea>
                                     <label for="" class="label">Tratamento:</label>
-                                    <textarea name="tratamento" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""></textarea>
+                                    <textarea name="tratamento" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->tratamento ?></textarea>
                                     <label for="" class="label">Prescrição:</label>
-                                    <textarea name="prescricao" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""></textarea>
+                                    <textarea name="prescricao" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->prescricao ?></textarea>
                                     <label for="" class="label">Observações:</label>
-                                    <textarea name="observacao" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""></textarea>
+                                    <textarea name="observacao" id="" cols="30" rows="10" class="ficha__textarea" maxlength="300" class=""><?= $_SESSION['atualiza_ficha']->observacoes ?></textarea>
                                 </div>
-
-
-
-                        </form>
-                    </div>
+                                
+                                
+                                
+                                <button type="submit" name="idAnimal" class="btn-ficha">Atualizar Ficha</button>
+                            </form>
+                        </div>
                 </div>
             </div>
     </div>
