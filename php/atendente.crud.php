@@ -549,3 +549,35 @@ function listaRacas($busca){
         unset($stmt);
     } 
 }
+
+
+function listarServicos($busca){
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT id_ficha_medica, id_servico, nome_servico
+        FROM liga_fichamedica WHERE id_ficha_medica = :termobusca");
+
+        
+        $stmt->bindParam(":termobusca",$busca);
+        
+
+        $result = array();
+
+            if($stmt->execute()) {
+                if($stmt->rowCount() > 0) {
+                    while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                        array_push($result,$row);
+                    }
+                }
+            }
+        return $result;
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }
+}
