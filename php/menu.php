@@ -5,7 +5,7 @@
                     <a href="index.php">
                 <img src="../assets/img/logo/petmania-black-153.png" alt="Logomarca PetMania" height="105">
                     </a>
-                <h1>Atendente<br><span>Nome Aqui</span></h1>
+                <h1>Atendente<br></h1>
             </div>
             <div class="sidebar-content">
                 <a href="./redirect.cliente.listar.php">
