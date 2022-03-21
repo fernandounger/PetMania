@@ -20,10 +20,11 @@
         include('./menu.veterinario.php')
         ?>
         <main class="main-container">
+            <button type="submit"  class="btn-ficha" name="idFicha" value="<?= $_SESSION['atualiza_ficha']->id_ficha ?>" form="formedita" style="position:absolute; top:15px; left:70px;">Atualizar Ficha</button>
             <div class="main-content">
                 <div class="container__title btn__main">
                     </div>
-                    <button type="submit"  class="btn-ficha" name="idFicha" value="<?= $_SESSION['atualiza_ficha']->id_ficha ?>" form="formedita" >Atualizar Ficha</button>
+                    
                     <div class="main-table">
                         <div class="form-ficha">
                             <form id="formedita" action="./action.atualizar.ficha.php" method="post">
