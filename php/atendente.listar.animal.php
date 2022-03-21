@@ -58,7 +58,7 @@
                                             <td><?= $busca->Dono ?></td>
                                             <td>
                                                 <a href="./redirect.cadastro.consulta.php?idAnimal=<?= $busca->id ?>&nomeAnimal=<?= $busca->Nome ?>"><i class="fa-solid fa-file-pen"></i></a>
-                                                <a href="./redirect.action.editar.animal.php?idAnimal=<?= $busca->id ?>&id_especie=<?= $busca->id_especie ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href="./redirect.action.editar.animal.php?idAnimal=<?= $busca->id ?>&idEspecie=<?= $busca->id_especie ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
