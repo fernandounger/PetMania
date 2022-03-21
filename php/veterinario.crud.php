@@ -34,3 +34,40 @@ function atualizaFichaMedica($ficha){ #ok
         unset($stmt);
     }
 }
+
+function listaFichaID($busca)
+{
+    try{
+        $con = getConnection();
+
+        $stmt = $con->prepare("SELECT 
+        id_ficha,
+        id_animal,
+        data_visita,
+        vet_id,
+        motivo_visita,
+        diagnostico,
+        tratamento,
+        prescricao,
+        observacoes 
+        FROM ficha_medica 
+        WHERE id_ficha = :termobusca");
+
+        $stmt->bindParam(":termobusca",$busca); 
+
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_OBJ);
+
+        return $row;
+    }
+    catch(PDOException $error){
+        return "Falha ao procurar. Erro: {$error->getMessage()}";
+    }
+    finally{
+        unset($cont);
+        unset($stmt);
+    }  
+
+    
+}
