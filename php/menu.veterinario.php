@@ -1,7 +1,9 @@
     <aside class="sidebar">
             <div class="sidebar-container">
                 <div>
+                    <a href="index.php">
                     <img src="../assets/img/logo/petmania-black-153.png" alt="Logomarca PetMania" height="105">
+                    </a>
                     <h1>Veterinário<br><span>Nome Aqui</span></h1>
                 </div>
                 <div class="sidebar-content">
