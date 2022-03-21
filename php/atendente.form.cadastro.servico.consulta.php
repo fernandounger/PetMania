@@ -41,7 +41,7 @@ $_SESSION['todosservicos'];
                                             <th>Servico</th>
                                             
     
-                                            <th>Editar Servico</th>
+                                            <th>Remover</th>
                                         </tr>
                                     </thead>
                                     <tbody>
