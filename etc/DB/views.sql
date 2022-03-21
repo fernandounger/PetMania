@@ -111,3 +111,18 @@ LEFT JOIN fichaM_Servicos ON ficha_medica.id_ficha = fichaM_Servicos.id_ficha_me
 LEFT JOIN servico ON fichaM_Servicos.id_servico = servico.id
 LEFT JOIN raca ON animal.raca = raca.id_raca
 LEFT JOIN especie ON raca.id_especie = especie.id_especie
+
+
+
+
+
+
+
+
+
+
+/*************************VIEW ADD FICHA MÉDICA**************************/
+CREATE VIEW liga_fichamecia AS
+SELECT fichaM_Servicos.id,fichaM_Servicos.id_ficha_medica, fichaM_Servicos.id_servico, servico.servico
+FROM fichaM_Servicos JOIN servico
+ON fichaM_Servicos.id_servico = servico.id; 
