@@ -1,9 +1,9 @@
 <?php
 
-define("__HOST__","");
-define("__USER__","");
-define("__PASS__","");
-define("__DATABASE__","");
+define("__HOST__","pfw0ltdr46khxib3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com");
+define("__USER__","kjvkctwmcyslabr6");
+define("__PASS__","s0f32w4e9r06m0ag");
+define("__DATABASE__","ffpfjnix4dvfbelk");
 
 
 function getConnection(){
