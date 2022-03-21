@@ -375,7 +375,7 @@ select{
     color: var(--color);
     height: 1.875rem;
     letter-spacing: 2px;
-    background-color: green;
+    background-color: var(--sky-blue);
     width: 100%;
     position: sticky;
     top: 0;
