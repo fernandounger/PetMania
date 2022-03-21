@@ -28,7 +28,7 @@ session_start()
                 </div>
                 <div class="main-table">
                     <div class="form-animal">
-                        <form action="" method="post">
+                        <form action="action.atualizar.animal.php" method="post">
                             <div class="form-container">
                                 <div class="box">
                                     <div class="input__nome ipt">
@@ -59,7 +59,7 @@ session_start()
                                     <div class="ipt">
                                         <label for="select" class="label">Raça:</label>
                                         <select name="select" id="select" autofocus>
-                                            <option value="" disabled>Selecione a Raça</option>
+                                            <option disabled>Selecione a Raça</option>
                                             <?php foreach($_SESSION['listaracas'] as $racas): ?>
                                                 <option value="<?= $racas->id_raca ?>" <?= ($racas->id_raca == $_SESSION['idanimal']->id_raca) ? 'selected' : '' ?>><?= $racas->nome_raca ?></option>
                                             <?php endforeach; ?>
