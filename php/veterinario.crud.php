@@ -11,21 +11,20 @@ function atualizaFichaMedica($ficha){ #ok
         tratamento = :tratamento,
         prescricao = :prescricao,
         observacoes = :observacoes
-        WHERE id_ficha = :idFicha
-        ");
+        WHERE id_ficha = :id_ficha");
 
         $stmt->bindParam(":diagnostico",$ficha->diagnostico);
         $stmt->bindParam(":tratamento",$ficha->tratamento);
         $stmt->bindParam(":prescricao",$ficha->prescricao);
         $stmt->bindParam(":observacoes",$ficha->observacoes);
-        $stmt->bindParam(":idFicha",$ficha->idFicha);
+        $stmt->bindParam(":id_ficha",$ficha->id_ficha);
 
         if($stmt->execute()){
             return true;
         }
-
+        
     }
-
+    
     catch(PDOException $error){
         return "Falha ao cadastrar a consulta/atendimento. Erro: {$error->getMessage()}";
     }
