@@ -58,6 +58,7 @@ SELECT animal.id_animal id,
  raca.id_raca,
  raca.nome_raca Raca,
  especie.nome_especie especie,
+ especie.id_especie,
  dono.Nome Dono,
  dono.id_dono
 FROM animal
