@@ -234,18 +234,17 @@ function AtualizaAnimal($animal) #ok
         $con = getConnection();
 
             $stmt = $con->prepare("UPDATE animal 
-            SET nome = :nome_animal, sexo = :sexo_animal, data_nasc = :data_nasc, raca = :raca_animal, observacoes = :observacoes 
+            SET nome = :nome_animal, sexo = :sexo_animal, data_nasc = :data_nasc, raca = :raca_animal 
             WHERE id_animal = :id_animal");
             
             $stmt->bindParam(":nome_animal",$animal->nome_animal);
             $stmt->bindParam(":sexo_animal",$animal->sexo_animal);
             $stmt->bindParam(":data_nasc", $animal->data_nasc);
             $stmt->bindParam(":raca_animal",$animal->raca_animal);
-            $stmt->bindParam(":observacoes",$animal->observacoes);
             $stmt->bindParam(":id_animal", $animal->id_animal);
 
             if($stmt->execute()){
-            return "Atualização de animal realizado com sucesso";
+            return true;
             }
     }
     catch(PDOException $error){
