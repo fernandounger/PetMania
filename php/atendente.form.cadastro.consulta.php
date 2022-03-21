@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -32,16 +35,20 @@
                                     <div class="box">
                                     <div class="input__animal ipt">
                                         <label for="animal" class="label">Animal:</label>
-                                        <input type="text" name="idAnimal" class="input" id="animal" value="<?= $_GET['nome_animal']?>" disabled>
+                                        <input type="text" class="input" id="animal" value="<?= $_GET['nomeAnimal']?>" disabled>
+                                        
                                     </div>
                                     
                                 </div>
                                 <div class="box">
                                     <div class="ipt">
                                         <label for="select" class="label">Veterinario:</label>
-                                        <select name="select" id="select" autofocus>
-                                            <option value="" selected>Escolha um serviço</option>
-                                            <option value="valor1">Valor 1</option>
+                                        <select name="idVet" id="select" autofocus>
+                                            <option selected disabled>Escolha um Veterinário</option>
+                                            <?php foreach($_SESSION['listamedicos'] as $vet): ?>
+                                            <option value="<?= $vet->id_vet?>"><?= $vet->nome_vet?></option>
+
+                                            <?php endforeach ?>
                                         </select>
                                     </div>
                                 </div>
@@ -50,8 +57,8 @@
                             </div>
                             <div class="container__textarea" >
                                 <label for="" class="label">Motivo:</label>
-                                <textarea name="" id="" cols="30" rows="10" class="textarea" maxlength="30" class=""></textarea>
-                                <button type="submit" class="cad-consult btn">Cadastrar Consulta</button> 
+                                <textarea name="motivo" id="" cols="30" rows="10" class="textarea" maxlength="300" class=""></textarea>
+                                <button type="submit" name="idAnimal" value="<?= $_GET['idAnimal']?>" class="cad-consult btn">Cadastrar Consulta</button> 
                             </div>
                         </div>
                         </form>
