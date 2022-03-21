@@ -20,7 +20,7 @@ else{
     $consulta->motivo = $_POST['motivo'];
 
     if(CadastroFichaMedica($consulta)){
-        header("location: atendente.listar.consulta.php");
+        header("location: redirect.consulta.listar.php");
         die();
     }
     header("location: atendente.listar.consulta.php?status=fail");
