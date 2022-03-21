@@ -62,7 +62,8 @@ session_start();
                                             <td><?= $busca->motivo_visita ?></td>
                                             <td><?= $busca->data_visita ?></td>
                                             <td>
-                                                <i class="fa-solid fa-pen-to-square"></i>
+                                                <a href="redirect.servicos.listar.php?idficha=<?= $busca->id_ficha ?>&nomeanimal=<?= $busca->nome_animal ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

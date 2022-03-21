@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start();
+$_SESSION['servicos'];
+$_SESSION['todosservicos'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -46,19 +49,52 @@
                     <h1 id="title">Serviços</h1>
                 </div>
                 <div class="main-table">
+                    <!--Rafael: tentativa de fazer a listagem de serviços-->    
+                    <div class="main-table" style="position:relative; top:465px;">
+                        <div class="table-pacient" >
+                            
+                            <div class="infinit__table" style="position:relative; top:10px;">
+    
+                                <table class="table">
+                                    <thead id="thead">
+                                        <tr>
+                                            <th>ID Servico</th>
+                                            <th>Servico</th>
+                                            
+    
+                                            <th><i class="fa-solid fa-plus"></i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($_SESSION['servicos'] as $servico) : ?>
+                                            <tr>
+                                                <td><?= $servico->id_servico ?></td>
+                                                <td><?= $servico->nome_servico ?></td>
+                                                
+                                                <td>
+                                                    <a href="./redirect.cadastro.consulta.php?idAnimal=<?= $servico->id ?>&nomeAnimal=<?= $servico->Nome ?>"><i class="fa-solid fa-file-pen"></i></a>
+                                                    <a href="./redirect.action.editar.animal.php?id=<?= $servico->id ?>&id_especie=<?= $servico->id_especie ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--FIM da tentativa do Rafael-->
                     <div class="form-servico">
-                        <form action="alterar" method="post">
+                        <form action="action.adicionar.servico.php" method="post">
                             <div class="form-container">
                             <div class="box">    
                             </div>                            
-                            <div class="box">    
-
+                            <div class="box">
                             <div class="ipt">
-                                        <label for="alterar" class="label">serviço:</label>
-                                        <select name="alterar" id="select" autofocus>
+                                        <label for="servico" class="label">Serviço para atendimento de id-<?= $_GET['idficha']?> ao paciente <?= $_GET['nomeanimal']?>:</label>
+                                        <select name="servico" id="select" autofocus>
                                             <option value="" selected disabled>Selecione o Serviço</option>
-                                            <?php foreach ($_SESSION['alterar'] as $alterar) : ?>
-                                            <option value="<?= $alterar->alterar ?>"><?= $alterar->alterar ?></option>
+                                            <?php foreach ($_SESSION['todosservicos'] as $alterar) : ?>
+                                            <option value="<?= $alterar->id ?>"><?= $alterar->servico ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                         
@@ -66,7 +102,7 @@
                                 </div>
                                 <div class="box">    
                             </div>                                
-                                <button type="submit" class="cad-servico btn" name="alterar" value="<?= $_SESSION['alterar'] ?>">Cadastrar Serviço</button>
+                                <button type="submit" class="cad-servico btn" name="idficha" value="<?= $_GET['idficha'] ?>">Cadastrar Serviço</button>
                             </div>
                         </form>
                     </div>
