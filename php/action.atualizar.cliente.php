@@ -32,10 +32,10 @@ if(
 
 
     if(AtualizaCliente($cliente)){
-        header('location: atendente.listar.cliente.php?status=sucess');
+        header('location: redirect.cliente.listar.php?status=sucess');
         die();
     }else{
-        header('location: atendente.listar.cliente.php?status=fail');
+        header('location: redirect.cliente.listar.php?status=fail');
         die();
     }
     
