@@ -1,3 +1,6 @@
+<?php 
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,11 +34,11 @@
                                     <div class="input__nome ipt">
                                         <label for="nome" class="label">Nome Animal:</label>
                                         <input type="text" id="nome" name="nomeAnimal" class="input"
-                                            placeholder="Nome do Animal">
+                                            placeholder="Nome do Animal" value="<?= $_SESSION['idanimal']->Nome ?>">
                                     </div>
                                     <div class="input__data ipt">
                                         <label for="dateanimal" class="label">Data de Nascimento:</label>
-                                        <input type="date" id="dateanimal" name="dataNascimento" class="input">
+                                        <input type="date" id="dateanimal" name="dataNascimento" class="input" value="<?= $_SESSION['idanimal']->Data_Nascimento?>">
                                     </div>
                                 </div>
                                 <div class="box">
@@ -44,10 +47,10 @@
                                         <label for="sexo" class="label">Sexo:</label>
                                         <div class="box-check">
                                             <div>
-                                                <input type="radio" id="macho" name="sexo" value="m">
+                                                <input type="radio" id="macho" name="sexo" value="M" <?= ($_SESSION['idanimal']->Sexo == "M")? 'checked' : '' ?> >
                                                 <label class="m">Macho</label>
 
-                                                <input type="radio" id="femea" name="sexo" value="f">
+                                                <input type="radio" id="femea" name="sexo" value="F" <?= ($_SESSION['idanimal']->Sexo == "F")? 'checked' : '' ?> >
                                                 <label class="f">Fêmea</label>
                                             </div>
 
@@ -56,14 +59,14 @@
                                     <div class="ipt">
                                         <label for="select" class="label">Raça:</label>
                                         <select name="select" id="select" autofocus>
-                                            <option value="" selected>Selecione a Raça</option>
-                                            <option value="valor1">Valor 1</option>
-                                            <option value="valor2">Valor 2</option>
-                                            <option value="valor3">Valor 3</option>
+                                            <option value="" disabled>Selecione a Raça</option>
+                                            <?php foreach($_SESSION['listaracas'] as $racas): ?>
+                                                <option value="<?= $racas->id_raca ?>" <?= ($racas->id_raca == $_SESSION['idanimal']->id_raca) ? 'selected' : '' ?>><?= $racas->nome_raca ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
-                                <button type="submit" class="cad-animal btn">Editar Animal</button>
+                                <button name="idanimal" value="<?= $_SESSION['idanimal']->id ?>" type="submit" class="cad-animal btn">Editar Animal</button>
                             </div>
                         </form>
                     </div>
