@@ -11,7 +11,7 @@
                             class="fa-solid fa-user-pen"></i>
                          Clientes</button>
                 </a>
-                <a href="./atendente.listar.animal.php">
+                <a href="./redirect.animal.listar.php">
                     <button class="sidebar__button btn-client btn-animal" role="button" type="button"><i class="fa-solid fa-paw"></i>
                          Animais</button>
                 </a>
