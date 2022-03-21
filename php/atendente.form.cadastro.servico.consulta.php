@@ -72,8 +72,8 @@ $_SESSION['todosservicos'];
                                                 <td><?= $servico->nome_servico ?></td>
                                                 
                                                 <td>
-                                                    <a href="./redirect.cadastro.consulta.php?idAnimal=<?= $servico->id ?>&nomeAnimal=<?= $servico->Nome ?>"><i class="fa-solid fa-file-pen"></i></a>
-                                                    <a href="./redirect.action.editar.animal.php?id=<?= $servico->id ?>&id_especie=<?= $servico->id_especie ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                    <a href="./redirect.deletar.servico.php?idservico=<?= $servico->id_servico ?>&idficha=<?= $_GET['idficha']?>" onclick="return confirm('Deseja realmente deletar o serviço?')">Remover <i class="fa-solid fa-file-pen"></i></a>
+                                                    
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
