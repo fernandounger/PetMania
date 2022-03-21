@@ -62,7 +62,7 @@ session_start();
                                             <td><?= $busca->motivo_visita ?></td>
                                             <td><?= $busca->data_visita ?></td>
                                             <td>
-                                                <a href="redirect.servicos.listar.php?idficha=<?= $busca->id_ficha ?>&nomeanimal=<?= $busca->nome_animal ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href="redirect.action.atualizar.ficha.php?idFicha=<?= $busca->id_ficha ?>&nomeanimal=<?= $busca->nome_animal ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                                 
                                             </td>
                                         </tr>
