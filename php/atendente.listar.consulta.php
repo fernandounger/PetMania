@@ -48,7 +48,7 @@ session_start();
                                         <th>Dono</th>
                                         <th>Motivo</th>
                                         <th>Data</th>
-                                        <th><i class="fa-solid fa-plus"></i></th>
+                                        <th> Adicionar Serviço<i class="fa-solid fa-plus"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
