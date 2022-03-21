@@ -16,7 +16,7 @@ $ficha->diagnostico = $_POST['diagnostico'];
 $ficha->tratamento = $_POST['tratamento'];
 $ficha->prescricao = $_POST['prescricao'];
 $ficha->observacoes = $_POST['observacoes'];
-$ficha->if_ficha = $_POST['idFicha'];
+$ficha->id_ficha = $_POST['idFicha'];
 
 if(atualizaFichaMedica($ficha))
 {
