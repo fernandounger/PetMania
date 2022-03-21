@@ -296,7 +296,7 @@ function listarFichas($busca){
     try{
         $con = getConnection();
 
-        $stmt = $con->prepare("SELECT 
+        $stmt = $con->prepare("SELECT DISTINCT
         id_ficha,
         data_visita,
         especie,
