@@ -21,6 +21,9 @@ else{
 
     if(CadastroFichaMedica($consulta)){
         header("location: atendente.listar.consulta.php");
+        die();
     }
+    header("location: atendente.listar.consulta.php?status=fail");
+        die();
 
 }
