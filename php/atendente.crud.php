@@ -268,7 +268,7 @@ function AtualizaAnimal($animal) #ok
 
 
 /*********************************** CADASTRO DE FICHA MÉDICA/CONSULTAS *************************/
-function Cadastro_Ficha_Medica($ficha) #ok
+function CadastroFichaMedica($ficha) #ok
 {
     try{
         $con  = getConnection();
@@ -482,6 +482,7 @@ function listaAnimais($busca){
         Data_Nascimento,
         Raca,
         especie,
+        id_especie,
         Dono
         FROM tudo_animal 
         WHERE nome LIKE :termobusca 
