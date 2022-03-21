@@ -12,7 +12,7 @@ if($_POST['nome_cliente'] == NULL ||
    $_POST['cep'] == NULL ||
    $_POST['numero'] == NULL)
 {
-    header('location: registerclient.php?status=acess-deny');
+    header('location: redirect.cliente.listar.php?status=acess-deny');
 	die();
 }
 
@@ -29,6 +29,6 @@ $cliente->cep = $_POST['cep'];
 
 if(CadastroCliente($cliente))
 {
-    header('location: atendente.listar.cliente.php');
+    header('location: redirect.cliente.listar.php');
     die;
 }
