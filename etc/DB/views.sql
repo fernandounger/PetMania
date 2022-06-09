@@ -28,6 +28,16 @@ ON dono.endereco = endereco.id_end
 RIGHT JOIN animal
 ON dono.id_dono = animal.id_dono;
 
+
+
+--Criação de view dos dados básicos do cliente--
+
+CREATE VIEW dados_cliente_id AS
+SELECT id_dono,cpf, Nome, telefone, email,id_end,cidade,bairro,logradouro,numero,CEP FROM dono
+JOIN endereco ON endereco.id_end = dono.endereco;
+
+
+
 # ----- VIEW FICHAS MEDICAS (ATENDENTE) ----- #
 CREATE VIEW fichas_Medicas AS	
 
